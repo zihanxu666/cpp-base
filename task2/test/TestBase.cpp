@@ -1,0 +1,1 @@
+#include "../third/gtest-all.cc"
