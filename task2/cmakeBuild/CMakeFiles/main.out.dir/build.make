@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.10.1/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/gengtao/dev/tempC++/project2
+CMAKE_SOURCE_DIR = /Users/gengtao/dev/cpp-base/task2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/gengtao/dev/tempC++/project2/cmakeBuild
+CMAKE_BINARY_DIR = /Users/gengtao/dev/cpp-base/task2/cmakeBuild
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.out.dir/depend.make
@@ -57,18 +57,42 @@ include CMakeFiles/main.out.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.out.dir/flags.make
 
+CMakeFiles/main.out.dir/main.cpp.o: CMakeFiles/main.out.dir/flags.make
+CMakeFiles/main.out.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.out.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/main.cpp.o -c /Users/gengtao/dev/cpp-base/task2/main.cpp
+
+CMakeFiles/main.out.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/main.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/cpp-base/task2/main.cpp > CMakeFiles/main.out.dir/main.cpp.i
+
+CMakeFiles/main.out.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/main.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/cpp-base/task2/main.cpp -o CMakeFiles/main.out.dir/main.cpp.s
+
+CMakeFiles/main.out.dir/main.cpp.o.requires:
+
+.PHONY : CMakeFiles/main.out.dir/main.cpp.o.requires
+
+CMakeFiles/main.out.dir/main.cpp.o.provides: CMakeFiles/main.out.dir/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/main.cpp.o.provides.build
+.PHONY : CMakeFiles/main.out.dir/main.cpp.o.provides
+
+CMakeFiles/main.out.dir/main.cpp.o.provides.build: CMakeFiles/main.out.dir/main.cpp.o
+
+
 CMakeFiles/main.out.dir/src/Options.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/src/Options.cpp.o: ../src/Options.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.out.dir/src/Options.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/Options.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/Options.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.out.dir/src/Options.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/Options.cpp.o -c /Users/gengtao/dev/cpp-base/task2/src/Options.cpp
 
 CMakeFiles/main.out.dir/src/Options.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/Options.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/Options.cpp > CMakeFiles/main.out.dir/src/Options.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/cpp-base/task2/src/Options.cpp > CMakeFiles/main.out.dir/src/Options.cpp.i
 
 CMakeFiles/main.out.dir/src/Options.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/Options.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/Options.cpp -o CMakeFiles/main.out.dir/src/Options.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/cpp-base/task2/src/Options.cpp -o CMakeFiles/main.out.dir/src/Options.cpp.s
 
 CMakeFiles/main.out.dir/src/Options.cpp.o.requires:
 
@@ -81,42 +105,18 @@ CMakeFiles/main.out.dir/src/Options.cpp.o.provides: CMakeFiles/main.out.dir/src/
 CMakeFiles/main.out.dir/src/Options.cpp.o.provides.build: CMakeFiles/main.out.dir/src/Options.cpp.o
 
 
-CMakeFiles/main.out.dir/src/Test3.cpp.o: CMakeFiles/main.out.dir/flags.make
-CMakeFiles/main.out.dir/src/Test3.cpp.o: ../src/Test3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.out.dir/src/Test3.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/Test3.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/Test3.cpp
-
-CMakeFiles/main.out.dir/src/Test3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/Test3.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/Test3.cpp > CMakeFiles/main.out.dir/src/Test3.cpp.i
-
-CMakeFiles/main.out.dir/src/Test3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/Test3.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/Test3.cpp -o CMakeFiles/main.out.dir/src/Test3.cpp.s
-
-CMakeFiles/main.out.dir/src/Test3.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.out.dir/src/Test3.cpp.o.requires
-
-CMakeFiles/main.out.dir/src/Test3.cpp.o.provides: CMakeFiles/main.out.dir/src/Test3.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/Test3.cpp.o.provides.build
-.PHONY : CMakeFiles/main.out.dir/src/Test3.cpp.o.provides
-
-CMakeFiles/main.out.dir/src/Test3.cpp.o.provides.build: CMakeFiles/main.out.dir/src/Test3.cpp.o
-
-
 CMakeFiles/main.out.dir/src/hw.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/src/hw.cpp.o: ../src/hw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.out.dir/src/hw.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.out.dir/src/hw.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw.cpp.o -c /Users/gengtao/dev/cpp-base/task2/src/hw.cpp
 
 CMakeFiles/main.out.dir/src/hw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw.cpp > CMakeFiles/main.out.dir/src/hw.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/cpp-base/task2/src/hw.cpp > CMakeFiles/main.out.dir/src/hw.cpp.i
 
 CMakeFiles/main.out.dir/src/hw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw.cpp -o CMakeFiles/main.out.dir/src/hw.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/cpp-base/task2/src/hw.cpp -o CMakeFiles/main.out.dir/src/hw.cpp.s
 
 CMakeFiles/main.out.dir/src/hw.cpp.o.requires:
 
@@ -129,210 +129,18 @@ CMakeFiles/main.out.dir/src/hw.cpp.o.provides: CMakeFiles/main.out.dir/src/hw.cp
 CMakeFiles/main.out.dir/src/hw.cpp.o.provides.build: CMakeFiles/main.out.dir/src/hw.cpp.o
 
 
-CMakeFiles/main.out.dir/src/hw1.1a.cpp.o: CMakeFiles/main.out.dir/flags.make
-CMakeFiles/main.out.dir/src/hw1.1a.cpp.o: ../src/hw1.1a.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.out.dir/src/hw1.1a.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw1.1a.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw1.1a.cpp
-
-CMakeFiles/main.out.dir/src/hw1.1a.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw1.1a.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw1.1a.cpp > CMakeFiles/main.out.dir/src/hw1.1a.cpp.i
-
-CMakeFiles/main.out.dir/src/hw1.1a.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw1.1a.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw1.1a.cpp -o CMakeFiles/main.out.dir/src/hw1.1a.cpp.s
-
-CMakeFiles/main.out.dir/src/hw1.1a.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.out.dir/src/hw1.1a.cpp.o.requires
-
-CMakeFiles/main.out.dir/src/hw1.1a.cpp.o.provides: CMakeFiles/main.out.dir/src/hw1.1a.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.1a.cpp.o.provides.build
-.PHONY : CMakeFiles/main.out.dir/src/hw1.1a.cpp.o.provides
-
-CMakeFiles/main.out.dir/src/hw1.1a.cpp.o.provides.build: CMakeFiles/main.out.dir/src/hw1.1a.cpp.o
-
-
-CMakeFiles/main.out.dir/src/hw1.1b.cpp.o: CMakeFiles/main.out.dir/flags.make
-CMakeFiles/main.out.dir/src/hw1.1b.cpp.o: ../src/hw1.1b.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.out.dir/src/hw1.1b.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw1.1b.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw1.1b.cpp
-
-CMakeFiles/main.out.dir/src/hw1.1b.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw1.1b.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw1.1b.cpp > CMakeFiles/main.out.dir/src/hw1.1b.cpp.i
-
-CMakeFiles/main.out.dir/src/hw1.1b.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw1.1b.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw1.1b.cpp -o CMakeFiles/main.out.dir/src/hw1.1b.cpp.s
-
-CMakeFiles/main.out.dir/src/hw1.1b.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.out.dir/src/hw1.1b.cpp.o.requires
-
-CMakeFiles/main.out.dir/src/hw1.1b.cpp.o.provides: CMakeFiles/main.out.dir/src/hw1.1b.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.1b.cpp.o.provides.build
-.PHONY : CMakeFiles/main.out.dir/src/hw1.1b.cpp.o.provides
-
-CMakeFiles/main.out.dir/src/hw1.1b.cpp.o.provides.build: CMakeFiles/main.out.dir/src/hw1.1b.cpp.o
-
-
-CMakeFiles/main.out.dir/src/hw1.2a.cpp.o: CMakeFiles/main.out.dir/flags.make
-CMakeFiles/main.out.dir/src/hw1.2a.cpp.o: ../src/hw1.2a.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.out.dir/src/hw1.2a.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw1.2a.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw1.2a.cpp
-
-CMakeFiles/main.out.dir/src/hw1.2a.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw1.2a.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw1.2a.cpp > CMakeFiles/main.out.dir/src/hw1.2a.cpp.i
-
-CMakeFiles/main.out.dir/src/hw1.2a.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw1.2a.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw1.2a.cpp -o CMakeFiles/main.out.dir/src/hw1.2a.cpp.s
-
-CMakeFiles/main.out.dir/src/hw1.2a.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.out.dir/src/hw1.2a.cpp.o.requires
-
-CMakeFiles/main.out.dir/src/hw1.2a.cpp.o.provides: CMakeFiles/main.out.dir/src/hw1.2a.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.2a.cpp.o.provides.build
-.PHONY : CMakeFiles/main.out.dir/src/hw1.2a.cpp.o.provides
-
-CMakeFiles/main.out.dir/src/hw1.2a.cpp.o.provides.build: CMakeFiles/main.out.dir/src/hw1.2a.cpp.o
-
-
-CMakeFiles/main.out.dir/src/hw1.2b.cpp.o: CMakeFiles/main.out.dir/flags.make
-CMakeFiles/main.out.dir/src/hw1.2b.cpp.o: ../src/hw1.2b.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.out.dir/src/hw1.2b.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw1.2b.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw1.2b.cpp
-
-CMakeFiles/main.out.dir/src/hw1.2b.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw1.2b.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw1.2b.cpp > CMakeFiles/main.out.dir/src/hw1.2b.cpp.i
-
-CMakeFiles/main.out.dir/src/hw1.2b.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw1.2b.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw1.2b.cpp -o CMakeFiles/main.out.dir/src/hw1.2b.cpp.s
-
-CMakeFiles/main.out.dir/src/hw1.2b.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.out.dir/src/hw1.2b.cpp.o.requires
-
-CMakeFiles/main.out.dir/src/hw1.2b.cpp.o.provides: CMakeFiles/main.out.dir/src/hw1.2b.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.2b.cpp.o.provides.build
-.PHONY : CMakeFiles/main.out.dir/src/hw1.2b.cpp.o.provides
-
-CMakeFiles/main.out.dir/src/hw1.2b.cpp.o.provides.build: CMakeFiles/main.out.dir/src/hw1.2b.cpp.o
-
-
-CMakeFiles/main.out.dir/src/hw1.3a.cpp.o: CMakeFiles/main.out.dir/flags.make
-CMakeFiles/main.out.dir/src/hw1.3a.cpp.o: ../src/hw1.3a.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.out.dir/src/hw1.3a.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw1.3a.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw1.3a.cpp
-
-CMakeFiles/main.out.dir/src/hw1.3a.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw1.3a.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw1.3a.cpp > CMakeFiles/main.out.dir/src/hw1.3a.cpp.i
-
-CMakeFiles/main.out.dir/src/hw1.3a.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw1.3a.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw1.3a.cpp -o CMakeFiles/main.out.dir/src/hw1.3a.cpp.s
-
-CMakeFiles/main.out.dir/src/hw1.3a.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.out.dir/src/hw1.3a.cpp.o.requires
-
-CMakeFiles/main.out.dir/src/hw1.3a.cpp.o.provides: CMakeFiles/main.out.dir/src/hw1.3a.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.3a.cpp.o.provides.build
-.PHONY : CMakeFiles/main.out.dir/src/hw1.3a.cpp.o.provides
-
-CMakeFiles/main.out.dir/src/hw1.3a.cpp.o.provides.build: CMakeFiles/main.out.dir/src/hw1.3a.cpp.o
-
-
-CMakeFiles/main.out.dir/src/hw1.3b.cpp.o: CMakeFiles/main.out.dir/flags.make
-CMakeFiles/main.out.dir/src/hw1.3b.cpp.o: ../src/hw1.3b.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.out.dir/src/hw1.3b.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw1.3b.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw1.3b.cpp
-
-CMakeFiles/main.out.dir/src/hw1.3b.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw1.3b.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw1.3b.cpp > CMakeFiles/main.out.dir/src/hw1.3b.cpp.i
-
-CMakeFiles/main.out.dir/src/hw1.3b.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw1.3b.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw1.3b.cpp -o CMakeFiles/main.out.dir/src/hw1.3b.cpp.s
-
-CMakeFiles/main.out.dir/src/hw1.3b.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.out.dir/src/hw1.3b.cpp.o.requires
-
-CMakeFiles/main.out.dir/src/hw1.3b.cpp.o.provides: CMakeFiles/main.out.dir/src/hw1.3b.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.3b.cpp.o.provides.build
-.PHONY : CMakeFiles/main.out.dir/src/hw1.3b.cpp.o.provides
-
-CMakeFiles/main.out.dir/src/hw1.3b.cpp.o.provides.build: CMakeFiles/main.out.dir/src/hw1.3b.cpp.o
-
-
-CMakeFiles/main.out.dir/src/hw1.4.cpp.o: CMakeFiles/main.out.dir/flags.make
-CMakeFiles/main.out.dir/src/hw1.4.cpp.o: ../src/hw1.4.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.out.dir/src/hw1.4.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw1.4.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw1.4.cpp
-
-CMakeFiles/main.out.dir/src/hw1.4.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw1.4.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw1.4.cpp > CMakeFiles/main.out.dir/src/hw1.4.cpp.i
-
-CMakeFiles/main.out.dir/src/hw1.4.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw1.4.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw1.4.cpp -o CMakeFiles/main.out.dir/src/hw1.4.cpp.s
-
-CMakeFiles/main.out.dir/src/hw1.4.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.out.dir/src/hw1.4.cpp.o.requires
-
-CMakeFiles/main.out.dir/src/hw1.4.cpp.o.provides: CMakeFiles/main.out.dir/src/hw1.4.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.4.cpp.o.provides.build
-.PHONY : CMakeFiles/main.out.dir/src/hw1.4.cpp.o.provides
-
-CMakeFiles/main.out.dir/src/hw1.4.cpp.o.provides.build: CMakeFiles/main.out.dir/src/hw1.4.cpp.o
-
-
-CMakeFiles/main.out.dir/src/hw1.5.cpp.o: CMakeFiles/main.out.dir/flags.make
-CMakeFiles/main.out.dir/src/hw1.5.cpp.o: ../src/hw1.5.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.out.dir/src/hw1.5.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw1.5.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw1.5.cpp
-
-CMakeFiles/main.out.dir/src/hw1.5.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw1.5.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw1.5.cpp > CMakeFiles/main.out.dir/src/hw1.5.cpp.i
-
-CMakeFiles/main.out.dir/src/hw1.5.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw1.5.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw1.5.cpp -o CMakeFiles/main.out.dir/src/hw1.5.cpp.s
-
-CMakeFiles/main.out.dir/src/hw1.5.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.out.dir/src/hw1.5.cpp.o.requires
-
-CMakeFiles/main.out.dir/src/hw1.5.cpp.o.provides: CMakeFiles/main.out.dir/src/hw1.5.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.5.cpp.o.provides.build
-.PHONY : CMakeFiles/main.out.dir/src/hw1.5.cpp.o.provides
-
-CMakeFiles/main.out.dir/src/hw1.5.cpp.o.provides.build: CMakeFiles/main.out.dir/src/hw1.5.cpp.o
-
-
 CMakeFiles/main.out.dir/src/hw2.1.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/src/hw2.1.cpp.o: ../src/hw2.1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.out.dir/src/hw2.1.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw2.1.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw2.1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.out.dir/src/hw2.1.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw2.1.cpp.o -c /Users/gengtao/dev/cpp-base/task2/src/hw2.1.cpp
 
 CMakeFiles/main.out.dir/src/hw2.1.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw2.1.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw2.1.cpp > CMakeFiles/main.out.dir/src/hw2.1.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/cpp-base/task2/src/hw2.1.cpp > CMakeFiles/main.out.dir/src/hw2.1.cpp.i
 
 CMakeFiles/main.out.dir/src/hw2.1.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw2.1.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw2.1.cpp -o CMakeFiles/main.out.dir/src/hw2.1.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/cpp-base/task2/src/hw2.1.cpp -o CMakeFiles/main.out.dir/src/hw2.1.cpp.s
 
 CMakeFiles/main.out.dir/src/hw2.1.cpp.o.requires:
 
@@ -347,16 +155,16 @@ CMakeFiles/main.out.dir/src/hw2.1.cpp.o.provides.build: CMakeFiles/main.out.dir/
 
 CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.o: ../src/hw2.1_backup.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw2.1_backup.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.o -c /Users/gengtao/dev/cpp-base/task2/src/hw2.1_backup.cpp
 
 CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw2.1_backup.cpp > CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/cpp-base/task2/src/hw2.1_backup.cpp > CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.i
 
 CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw2.1_backup.cpp -o CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/cpp-base/task2/src/hw2.1_backup.cpp -o CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.s
 
 CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.o.requires:
 
@@ -371,16 +179,16 @@ CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.o.provides.build: CMakeFiles/main.o
 
 CMakeFiles/main.out.dir/src/hw2.2.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/src/hw2.2.cpp.o: ../src/hw2.2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.out.dir/src/hw2.2.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw2.2.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw2.2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.out.dir/src/hw2.2.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw2.2.cpp.o -c /Users/gengtao/dev/cpp-base/task2/src/hw2.2.cpp
 
 CMakeFiles/main.out.dir/src/hw2.2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw2.2.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw2.2.cpp > CMakeFiles/main.out.dir/src/hw2.2.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/cpp-base/task2/src/hw2.2.cpp > CMakeFiles/main.out.dir/src/hw2.2.cpp.i
 
 CMakeFiles/main.out.dir/src/hw2.2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw2.2.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw2.2.cpp -o CMakeFiles/main.out.dir/src/hw2.2.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/cpp-base/task2/src/hw2.2.cpp -o CMakeFiles/main.out.dir/src/hw2.2.cpp.s
 
 CMakeFiles/main.out.dir/src/hw2.2.cpp.o.requires:
 
@@ -395,16 +203,16 @@ CMakeFiles/main.out.dir/src/hw2.2.cpp.o.provides.build: CMakeFiles/main.out.dir/
 
 CMakeFiles/main.out.dir/src/hw2.3.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/src/hw2.3.cpp.o: ../src/hw2.3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.out.dir/src/hw2.3.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw2.3.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw2.3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.out.dir/src/hw2.3.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw2.3.cpp.o -c /Users/gengtao/dev/cpp-base/task2/src/hw2.3.cpp
 
 CMakeFiles/main.out.dir/src/hw2.3.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw2.3.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw2.3.cpp > CMakeFiles/main.out.dir/src/hw2.3.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/cpp-base/task2/src/hw2.3.cpp > CMakeFiles/main.out.dir/src/hw2.3.cpp.i
 
 CMakeFiles/main.out.dir/src/hw2.3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw2.3.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw2.3.cpp -o CMakeFiles/main.out.dir/src/hw2.3.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/cpp-base/task2/src/hw2.3.cpp -o CMakeFiles/main.out.dir/src/hw2.3.cpp.s
 
 CMakeFiles/main.out.dir/src/hw2.3.cpp.o.requires:
 
@@ -419,16 +227,16 @@ CMakeFiles/main.out.dir/src/hw2.3.cpp.o.provides.build: CMakeFiles/main.out.dir/
 
 CMakeFiles/main.out.dir/src/hw2.4.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/src/hw2.4.cpp.o: ../src/hw2.4.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.out.dir/src/hw2.4.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw2.4.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/hw2.4.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.out.dir/src/hw2.4.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/hw2.4.cpp.o -c /Users/gengtao/dev/cpp-base/task2/src/hw2.4.cpp
 
 CMakeFiles/main.out.dir/src/hw2.4.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/hw2.4.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/hw2.4.cpp > CMakeFiles/main.out.dir/src/hw2.4.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/cpp-base/task2/src/hw2.4.cpp > CMakeFiles/main.out.dir/src/hw2.4.cpp.i
 
 CMakeFiles/main.out.dir/src/hw2.4.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/hw2.4.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/hw2.4.cpp -o CMakeFiles/main.out.dir/src/hw2.4.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/cpp-base/task2/src/hw2.4.cpp -o CMakeFiles/main.out.dir/src/hw2.4.cpp.s
 
 CMakeFiles/main.out.dir/src/hw2.4.cpp.o.requires:
 
@@ -441,42 +249,18 @@ CMakeFiles/main.out.dir/src/hw2.4.cpp.o.provides: CMakeFiles/main.out.dir/src/hw
 CMakeFiles/main.out.dir/src/hw2.4.cpp.o.provides.build: CMakeFiles/main.out.dir/src/hw2.4.cpp.o
 
 
-CMakeFiles/main.out.dir/src/main.cpp.o: CMakeFiles/main.out.dir/flags.make
-CMakeFiles/main.out.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/main.out.dir/src/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/main.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/main.cpp
-
-CMakeFiles/main.out.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/main.cpp > CMakeFiles/main.out.dir/src/main.cpp.i
-
-CMakeFiles/main.out.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/main.cpp -o CMakeFiles/main.out.dir/src/main.cpp.s
-
-CMakeFiles/main.out.dir/src/main.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.out.dir/src/main.cpp.o.requires
-
-CMakeFiles/main.out.dir/src/main.cpp.o.provides: CMakeFiles/main.out.dir/src/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/main.cpp.o.provides.build
-.PHONY : CMakeFiles/main.out.dir/src/main.cpp.o.provides
-
-CMakeFiles/main.out.dir/src/main.cpp.o.provides.build: CMakeFiles/main.out.dir/src/main.cpp.o
-
-
 CMakeFiles/main.out.dir/src/simpath.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/src/simpath.cpp.o: ../src/simpath.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/main.out.dir/src/simpath.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/simpath.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/simpath.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.out.dir/src/simpath.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/simpath.cpp.o -c /Users/gengtao/dev/cpp-base/task2/src/simpath.cpp
 
 CMakeFiles/main.out.dir/src/simpath.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/simpath.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/simpath.cpp > CMakeFiles/main.out.dir/src/simpath.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/cpp-base/task2/src/simpath.cpp > CMakeFiles/main.out.dir/src/simpath.cpp.i
 
 CMakeFiles/main.out.dir/src/simpath.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/simpath.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/simpath.cpp -o CMakeFiles/main.out.dir/src/simpath.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/cpp-base/task2/src/simpath.cpp -o CMakeFiles/main.out.dir/src/simpath.cpp.s
 
 CMakeFiles/main.out.dir/src/simpath.cpp.o.requires:
 
@@ -491,16 +275,16 @@ CMakeFiles/main.out.dir/src/simpath.cpp.o.provides.build: CMakeFiles/main.out.di
 
 CMakeFiles/main.out.dir/src/testFileStream.cpp.o: CMakeFiles/main.out.dir/flags.make
 CMakeFiles/main.out.dir/src/testFileStream.cpp.o: ../src/testFileStream.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/main.out.dir/src/testFileStream.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/testFileStream.cpp.o -c /Users/gengtao/dev/tempC++/project2/src/testFileStream.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.out.dir/src/testFileStream.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.out.dir/src/testFileStream.cpp.o -c /Users/gengtao/dev/cpp-base/task2/src/testFileStream.cpp
 
 CMakeFiles/main.out.dir/src/testFileStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.out.dir/src/testFileStream.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/tempC++/project2/src/testFileStream.cpp > CMakeFiles/main.out.dir/src/testFileStream.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gengtao/dev/cpp-base/task2/src/testFileStream.cpp > CMakeFiles/main.out.dir/src/testFileStream.cpp.i
 
 CMakeFiles/main.out.dir/src/testFileStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.out.dir/src/testFileStream.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/tempC++/project2/src/testFileStream.cpp -o CMakeFiles/main.out.dir/src/testFileStream.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gengtao/dev/cpp-base/task2/src/testFileStream.cpp -o CMakeFiles/main.out.dir/src/testFileStream.cpp.s
 
 CMakeFiles/main.out.dir/src/testFileStream.cpp.o.requires:
 
@@ -515,51 +299,33 @@ CMakeFiles/main.out.dir/src/testFileStream.cpp.o.provides.build: CMakeFiles/main
 
 # Object files for target main.out
 main_out_OBJECTS = \
+"CMakeFiles/main.out.dir/main.cpp.o" \
 "CMakeFiles/main.out.dir/src/Options.cpp.o" \
-"CMakeFiles/main.out.dir/src/Test3.cpp.o" \
 "CMakeFiles/main.out.dir/src/hw.cpp.o" \
-"CMakeFiles/main.out.dir/src/hw1.1a.cpp.o" \
-"CMakeFiles/main.out.dir/src/hw1.1b.cpp.o" \
-"CMakeFiles/main.out.dir/src/hw1.2a.cpp.o" \
-"CMakeFiles/main.out.dir/src/hw1.2b.cpp.o" \
-"CMakeFiles/main.out.dir/src/hw1.3a.cpp.o" \
-"CMakeFiles/main.out.dir/src/hw1.3b.cpp.o" \
-"CMakeFiles/main.out.dir/src/hw1.4.cpp.o" \
-"CMakeFiles/main.out.dir/src/hw1.5.cpp.o" \
 "CMakeFiles/main.out.dir/src/hw2.1.cpp.o" \
 "CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.o" \
 "CMakeFiles/main.out.dir/src/hw2.2.cpp.o" \
 "CMakeFiles/main.out.dir/src/hw2.3.cpp.o" \
 "CMakeFiles/main.out.dir/src/hw2.4.cpp.o" \
-"CMakeFiles/main.out.dir/src/main.cpp.o" \
 "CMakeFiles/main.out.dir/src/simpath.cpp.o" \
 "CMakeFiles/main.out.dir/src/testFileStream.cpp.o"
 
 # External object files for target main.out
 main_out_EXTERNAL_OBJECTS =
 
+../build/main.out: CMakeFiles/main.out.dir/main.cpp.o
 ../build/main.out: CMakeFiles/main.out.dir/src/Options.cpp.o
-../build/main.out: CMakeFiles/main.out.dir/src/Test3.cpp.o
 ../build/main.out: CMakeFiles/main.out.dir/src/hw.cpp.o
-../build/main.out: CMakeFiles/main.out.dir/src/hw1.1a.cpp.o
-../build/main.out: CMakeFiles/main.out.dir/src/hw1.1b.cpp.o
-../build/main.out: CMakeFiles/main.out.dir/src/hw1.2a.cpp.o
-../build/main.out: CMakeFiles/main.out.dir/src/hw1.2b.cpp.o
-../build/main.out: CMakeFiles/main.out.dir/src/hw1.3a.cpp.o
-../build/main.out: CMakeFiles/main.out.dir/src/hw1.3b.cpp.o
-../build/main.out: CMakeFiles/main.out.dir/src/hw1.4.cpp.o
-../build/main.out: CMakeFiles/main.out.dir/src/hw1.5.cpp.o
 ../build/main.out: CMakeFiles/main.out.dir/src/hw2.1.cpp.o
 ../build/main.out: CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.o
 ../build/main.out: CMakeFiles/main.out.dir/src/hw2.2.cpp.o
 ../build/main.out: CMakeFiles/main.out.dir/src/hw2.3.cpp.o
 ../build/main.out: CMakeFiles/main.out.dir/src/hw2.4.cpp.o
-../build/main.out: CMakeFiles/main.out.dir/src/main.cpp.o
 ../build/main.out: CMakeFiles/main.out.dir/src/simpath.cpp.o
 ../build/main.out: CMakeFiles/main.out.dir/src/testFileStream.cpp.o
 ../build/main.out: CMakeFiles/main.out.dir/build.make
 ../build/main.out: CMakeFiles/main.out.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable ../build/main.out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable ../build/main.out"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.out.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -567,23 +333,14 @@ CMakeFiles/main.out.dir/build: ../build/main.out
 
 .PHONY : CMakeFiles/main.out.dir/build
 
+CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/main.cpp.o.requires
 CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/Options.cpp.o.requires
-CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/Test3.cpp.o.requires
 CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw.cpp.o.requires
-CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw1.1a.cpp.o.requires
-CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw1.1b.cpp.o.requires
-CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw1.2a.cpp.o.requires
-CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw1.2b.cpp.o.requires
-CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw1.3a.cpp.o.requires
-CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw1.3b.cpp.o.requires
-CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw1.4.cpp.o.requires
-CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw1.5.cpp.o.requires
 CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw2.1.cpp.o.requires
 CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw2.1_backup.cpp.o.requires
 CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw2.2.cpp.o.requires
 CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw2.3.cpp.o.requires
 CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/hw2.4.cpp.o.requires
-CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/main.cpp.o.requires
 CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/simpath.cpp.o.requires
 CMakeFiles/main.out.dir/requires: CMakeFiles/main.out.dir/src/testFileStream.cpp.o.requires
 
@@ -594,6 +351,6 @@ CMakeFiles/main.out.dir/clean:
 .PHONY : CMakeFiles/main.out.dir/clean
 
 CMakeFiles/main.out.dir/depend:
-	cd /Users/gengtao/dev/tempC++/project2/cmakeBuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/gengtao/dev/tempC++/project2 /Users/gengtao/dev/tempC++/project2 /Users/gengtao/dev/tempC++/project2/cmakeBuild /Users/gengtao/dev/tempC++/project2/cmakeBuild /Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles/main.out.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/gengtao/dev/cpp-base/task2/cmakeBuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/gengtao/dev/cpp-base/task2 /Users/gengtao/dev/cpp-base/task2 /Users/gengtao/dev/cpp-base/task2/cmakeBuild /Users/gengtao/dev/cpp-base/task2/cmakeBuild /Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles/main.out.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/main.out.dir/depend
 

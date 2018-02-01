@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.10.1/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/gengtao/dev/tempC++/project2
+CMAKE_SOURCE_DIR = /Users/gengtao/dev/cpp-base/task2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/gengtao/dev/tempC++/project2/cmakeBuild
+CMAKE_BINARY_DIR = /Users/gengtao/dev/cpp-base/task2/cmakeBuild
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles /Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles /Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gengtao/dev/tempC++/project2/cmakeBuild/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gengtao/dev/cpp-base/task2/cmakeBuild/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,33 @@ main.out/fast:
 	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/build
 .PHONY : main.out/fast
 
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 src/Options.o: src/Options.cpp.o
 
 .PHONY : src/Options.o
@@ -150,33 +177,6 @@ src/Options.cpp.s:
 	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/Options.cpp.s
 .PHONY : src/Options.cpp.s
 
-src/Test3.o: src/Test3.cpp.o
-
-.PHONY : src/Test3.o
-
-# target to build an object file
-src/Test3.cpp.o:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/Test3.cpp.o
-.PHONY : src/Test3.cpp.o
-
-src/Test3.i: src/Test3.cpp.i
-
-.PHONY : src/Test3.i
-
-# target to preprocess a source file
-src/Test3.cpp.i:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/Test3.cpp.i
-.PHONY : src/Test3.cpp.i
-
-src/Test3.s: src/Test3.cpp.s
-
-.PHONY : src/Test3.s
-
-# target to generate assembly for a file
-src/Test3.cpp.s:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/Test3.cpp.s
-.PHONY : src/Test3.cpp.s
-
 src/hw.o: src/hw.cpp.o
 
 .PHONY : src/hw.o
@@ -203,222 +203,6 @@ src/hw.s: src/hw.cpp.s
 src/hw.cpp.s:
 	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw.cpp.s
 .PHONY : src/hw.cpp.s
-
-src/hw1.1a.o: src/hw1.1a.cpp.o
-
-.PHONY : src/hw1.1a.o
-
-# target to build an object file
-src/hw1.1a.cpp.o:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.1a.cpp.o
-.PHONY : src/hw1.1a.cpp.o
-
-src/hw1.1a.i: src/hw1.1a.cpp.i
-
-.PHONY : src/hw1.1a.i
-
-# target to preprocess a source file
-src/hw1.1a.cpp.i:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.1a.cpp.i
-.PHONY : src/hw1.1a.cpp.i
-
-src/hw1.1a.s: src/hw1.1a.cpp.s
-
-.PHONY : src/hw1.1a.s
-
-# target to generate assembly for a file
-src/hw1.1a.cpp.s:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.1a.cpp.s
-.PHONY : src/hw1.1a.cpp.s
-
-src/hw1.1b.o: src/hw1.1b.cpp.o
-
-.PHONY : src/hw1.1b.o
-
-# target to build an object file
-src/hw1.1b.cpp.o:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.1b.cpp.o
-.PHONY : src/hw1.1b.cpp.o
-
-src/hw1.1b.i: src/hw1.1b.cpp.i
-
-.PHONY : src/hw1.1b.i
-
-# target to preprocess a source file
-src/hw1.1b.cpp.i:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.1b.cpp.i
-.PHONY : src/hw1.1b.cpp.i
-
-src/hw1.1b.s: src/hw1.1b.cpp.s
-
-.PHONY : src/hw1.1b.s
-
-# target to generate assembly for a file
-src/hw1.1b.cpp.s:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.1b.cpp.s
-.PHONY : src/hw1.1b.cpp.s
-
-src/hw1.2a.o: src/hw1.2a.cpp.o
-
-.PHONY : src/hw1.2a.o
-
-# target to build an object file
-src/hw1.2a.cpp.o:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.2a.cpp.o
-.PHONY : src/hw1.2a.cpp.o
-
-src/hw1.2a.i: src/hw1.2a.cpp.i
-
-.PHONY : src/hw1.2a.i
-
-# target to preprocess a source file
-src/hw1.2a.cpp.i:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.2a.cpp.i
-.PHONY : src/hw1.2a.cpp.i
-
-src/hw1.2a.s: src/hw1.2a.cpp.s
-
-.PHONY : src/hw1.2a.s
-
-# target to generate assembly for a file
-src/hw1.2a.cpp.s:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.2a.cpp.s
-.PHONY : src/hw1.2a.cpp.s
-
-src/hw1.2b.o: src/hw1.2b.cpp.o
-
-.PHONY : src/hw1.2b.o
-
-# target to build an object file
-src/hw1.2b.cpp.o:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.2b.cpp.o
-.PHONY : src/hw1.2b.cpp.o
-
-src/hw1.2b.i: src/hw1.2b.cpp.i
-
-.PHONY : src/hw1.2b.i
-
-# target to preprocess a source file
-src/hw1.2b.cpp.i:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.2b.cpp.i
-.PHONY : src/hw1.2b.cpp.i
-
-src/hw1.2b.s: src/hw1.2b.cpp.s
-
-.PHONY : src/hw1.2b.s
-
-# target to generate assembly for a file
-src/hw1.2b.cpp.s:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.2b.cpp.s
-.PHONY : src/hw1.2b.cpp.s
-
-src/hw1.3a.o: src/hw1.3a.cpp.o
-
-.PHONY : src/hw1.3a.o
-
-# target to build an object file
-src/hw1.3a.cpp.o:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.3a.cpp.o
-.PHONY : src/hw1.3a.cpp.o
-
-src/hw1.3a.i: src/hw1.3a.cpp.i
-
-.PHONY : src/hw1.3a.i
-
-# target to preprocess a source file
-src/hw1.3a.cpp.i:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.3a.cpp.i
-.PHONY : src/hw1.3a.cpp.i
-
-src/hw1.3a.s: src/hw1.3a.cpp.s
-
-.PHONY : src/hw1.3a.s
-
-# target to generate assembly for a file
-src/hw1.3a.cpp.s:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.3a.cpp.s
-.PHONY : src/hw1.3a.cpp.s
-
-src/hw1.3b.o: src/hw1.3b.cpp.o
-
-.PHONY : src/hw1.3b.o
-
-# target to build an object file
-src/hw1.3b.cpp.o:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.3b.cpp.o
-.PHONY : src/hw1.3b.cpp.o
-
-src/hw1.3b.i: src/hw1.3b.cpp.i
-
-.PHONY : src/hw1.3b.i
-
-# target to preprocess a source file
-src/hw1.3b.cpp.i:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.3b.cpp.i
-.PHONY : src/hw1.3b.cpp.i
-
-src/hw1.3b.s: src/hw1.3b.cpp.s
-
-.PHONY : src/hw1.3b.s
-
-# target to generate assembly for a file
-src/hw1.3b.cpp.s:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.3b.cpp.s
-.PHONY : src/hw1.3b.cpp.s
-
-src/hw1.4.o: src/hw1.4.cpp.o
-
-.PHONY : src/hw1.4.o
-
-# target to build an object file
-src/hw1.4.cpp.o:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.4.cpp.o
-.PHONY : src/hw1.4.cpp.o
-
-src/hw1.4.i: src/hw1.4.cpp.i
-
-.PHONY : src/hw1.4.i
-
-# target to preprocess a source file
-src/hw1.4.cpp.i:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.4.cpp.i
-.PHONY : src/hw1.4.cpp.i
-
-src/hw1.4.s: src/hw1.4.cpp.s
-
-.PHONY : src/hw1.4.s
-
-# target to generate assembly for a file
-src/hw1.4.cpp.s:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.4.cpp.s
-.PHONY : src/hw1.4.cpp.s
-
-src/hw1.5.o: src/hw1.5.cpp.o
-
-.PHONY : src/hw1.5.o
-
-# target to build an object file
-src/hw1.5.cpp.o:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.5.cpp.o
-.PHONY : src/hw1.5.cpp.o
-
-src/hw1.5.i: src/hw1.5.cpp.i
-
-.PHONY : src/hw1.5.i
-
-# target to preprocess a source file
-src/hw1.5.cpp.i:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.5.cpp.i
-.PHONY : src/hw1.5.cpp.i
-
-src/hw1.5.s: src/hw1.5.cpp.s
-
-.PHONY : src/hw1.5.s
-
-# target to generate assembly for a file
-src/hw1.5.cpp.s:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw1.5.cpp.s
-.PHONY : src/hw1.5.cpp.s
 
 src/hw2.1.o: src/hw2.1.cpp.o
 
@@ -555,33 +339,6 @@ src/hw2.4.cpp.s:
 	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/hw2.4.cpp.s
 .PHONY : src/hw2.4.cpp.s
 
-src/main.o: src/main.cpp.o
-
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
-
-src/main.i: src/main.cpp.i
-
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
-
 src/simpath.o: src/simpath.cpp.o
 
 .PHONY : src/simpath.o
@@ -645,39 +402,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main.out"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... src/Options.o"
 	@echo "... src/Options.i"
 	@echo "... src/Options.s"
-	@echo "... src/Test3.o"
-	@echo "... src/Test3.i"
-	@echo "... src/Test3.s"
 	@echo "... src/hw.o"
 	@echo "... src/hw.i"
 	@echo "... src/hw.s"
-	@echo "... src/hw1.1a.o"
-	@echo "... src/hw1.1a.i"
-	@echo "... src/hw1.1a.s"
-	@echo "... src/hw1.1b.o"
-	@echo "... src/hw1.1b.i"
-	@echo "... src/hw1.1b.s"
-	@echo "... src/hw1.2a.o"
-	@echo "... src/hw1.2a.i"
-	@echo "... src/hw1.2a.s"
-	@echo "... src/hw1.2b.o"
-	@echo "... src/hw1.2b.i"
-	@echo "... src/hw1.2b.s"
-	@echo "... src/hw1.3a.o"
-	@echo "... src/hw1.3a.i"
-	@echo "... src/hw1.3a.s"
-	@echo "... src/hw1.3b.o"
-	@echo "... src/hw1.3b.i"
-	@echo "... src/hw1.3b.s"
-	@echo "... src/hw1.4.o"
-	@echo "... src/hw1.4.i"
-	@echo "... src/hw1.4.s"
-	@echo "... src/hw1.5.o"
-	@echo "... src/hw1.5.i"
-	@echo "... src/hw1.5.s"
 	@echo "... src/hw2.1.o"
 	@echo "... src/hw2.1.i"
 	@echo "... src/hw2.1.s"
@@ -693,9 +426,6 @@ help:
 	@echo "... src/hw2.4.o"
 	@echo "... src/hw2.4.i"
 	@echo "... src/hw2.4.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
 	@echo "... src/simpath.o"
 	@echo "... src/simpath.i"
 	@echo "... src/simpath.s"

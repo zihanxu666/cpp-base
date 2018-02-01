@@ -6,23 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/Users/gengtao/dev/tempC++/project2/included/src/BinomialModel.h
+/Users/gengtao/dev/cpp-base/task2/included/src/BinomialModel.h
 cmath
 -
 
-/Users/gengtao/dev/tempC++/project2/included/src/Options.h
+/Users/gengtao/dev/cpp-base/task2/included/src/Options.h
 BinomialModel.h
-/Users/gengtao/dev/tempC++/project2/included/src/BinomialModel.h
+/Users/gengtao/dev/cpp-base/task2/included/src/BinomialModel.h
 Payoff.h
-/Users/gengtao/dev/tempC++/project2/included/src/Payoff.h
+/Users/gengtao/dev/cpp-base/task2/included/src/Payoff.h
 
-/Users/gengtao/dev/tempC++/project2/included/src/Payoff.h
+/Users/gengtao/dev/cpp-base/task2/included/src/Payoff.h
 
-/Users/gengtao/dev/tempC++/project2/included/src/Test3.hpp
-hw.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw.hpp
-
-/Users/gengtao/dev/tempC++/project2/included/src/catch.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/catch.hpp
 TargetConditionals.h
 -
 iosfwd
@@ -258,7 +254,7 @@ string
 memory
 -
 Foundation/Foundation.h
-/Users/gengtao/dev/tempC++/project2/included/src/Foundation/Foundation.h
+/Users/gengtao/dev/cpp-base/task2/included/src/Foundation/Foundation.h
 signal.h
 -
 crtdbg.h
@@ -406,7 +402,7 @@ ctime
 algorithm
 -
 
-/Users/gengtao/dev/tempC++/project2/included/src/hw.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw.hpp
 iostream
 -
 map
@@ -430,55 +426,11 @@ fstream
 random
 -
 
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.1a.h
-
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.1b.h
-
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.2a.h
-iostream
--
-string
--
-
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.2b.h
-iostream
--
-string
--
-
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.3a.h
-iostream
--
-cmath
--
-
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.3b.h
-iostream
--
-cmath
--
-
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.4.h
-iostream
--
-string
--
-cmath
--
-
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.5.h
-iostream
--
-string
--
-cmath
--
-
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.1.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.1.hpp
 hw.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw.hpp
 
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.1_backup.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.1_backup.hpp
 iostream
 -
 map
@@ -486,29 +438,29 @@ map
 vector
 -
 
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.2.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.2.hpp
 hw.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw.hpp
 
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.3.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.3.hpp
 hw.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw.hpp
 
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.4.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.4.hpp
 hw.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw.hpp
 Options.h
-/Users/gengtao/dev/tempC++/project2/included/src/Options.h
+/Users/gengtao/dev/cpp-base/task2/included/src/Options.h
 Payoff.h
-/Users/gengtao/dev/tempC++/project2/included/src/Payoff.h
+/Users/gengtao/dev/cpp-base/task2/included/src/Payoff.h
 BinomialModel.h
-/Users/gengtao/dev/tempC++/project2/included/src/BinomialModel.h
+/Users/gengtao/dev/cpp-base/task2/included/src/BinomialModel.h
 
-/Users/gengtao/dev/tempC++/project2/included/src/simpath.h
+/Users/gengtao/dev/cpp-base/task2/included/src/simpath.h
 vector
 -
 
-/Users/gengtao/dev/tempC++/project2/included/src/testFileStream.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/testFileStream.hpp
 fstream
 -
 iostream
@@ -516,89 +468,49 @@ iostream
 ctime
 -
 
-/Users/gengtao/dev/tempC++/project2/src/Options.cpp
+/Users/gengtao/dev/cpp-base/task2/main.cpp
+included/src/catch.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/catch.hpp
+included/src/hw2.1.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.1.hpp
+included/src/hw2.2.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.2.hpp
+included/src/hw2.3.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.3.hpp
+included/src/hw2.4.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.4.hpp
 
-/Users/gengtao/dev/tempC++/project2/src/Test3.cpp
-../included/src/Test3.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/Test3.hpp
+/Users/gengtao/dev/cpp-base/task2/src/Options.cpp
 
-/Users/gengtao/dev/tempC++/project2/src/hw.cpp
+/Users/gengtao/dev/cpp-base/task2/src/hw.cpp
 ../included/src/hw.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw.hpp
 
-/Users/gengtao/dev/tempC++/project2/src/hw1.1a.cpp
-../included/src/hw1.1a.h
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.1a.h
-iostream
--
-
-/Users/gengtao/dev/tempC++/project2/src/hw1.1b.cpp
-iostream
--
-../included/src/hw1.1b.h
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.1b.h
-
-/Users/gengtao/dev/tempC++/project2/src/hw1.2a.cpp
-../included/src/hw1.2a.h
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.2a.h
-
-/Users/gengtao/dev/tempC++/project2/src/hw1.2b.cpp
-../included/src/hw1.2b.h
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.2b.h
-
-/Users/gengtao/dev/tempC++/project2/src/hw1.3a.cpp
-../included/src/hw1.3a.h
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.3a.h
-
-/Users/gengtao/dev/tempC++/project2/src/hw1.3b.cpp
-../included/src/hw1.3b.h
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.3b.h
-
-/Users/gengtao/dev/tempC++/project2/src/hw1.4.cpp
-../included/src/hw1.4.h
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.4.h
-
-/Users/gengtao/dev/tempC++/project2/src/hw1.5.cpp
-../included/src/hw1.5.h
-/Users/gengtao/dev/tempC++/project2/included/src/hw1.5.h
-
-/Users/gengtao/dev/tempC++/project2/src/hw2.1.cpp
+/Users/gengtao/dev/cpp-base/task2/src/hw2.1.cpp
 ../included/src/hw2.1.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.1.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.1.hpp
 
-/Users/gengtao/dev/tempC++/project2/src/hw2.1_backup.cpp
+/Users/gengtao/dev/cpp-base/task2/src/hw2.1_backup.cpp
 ../included/src/hw2.1_backup.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.1_backup.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.1_backup.hpp
 
-/Users/gengtao/dev/tempC++/project2/src/hw2.2.cpp
+/Users/gengtao/dev/cpp-base/task2/src/hw2.2.cpp
 ../included/src/hw2.2.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.2.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.2.hpp
 
-/Users/gengtao/dev/tempC++/project2/src/hw2.3.cpp
+/Users/gengtao/dev/cpp-base/task2/src/hw2.3.cpp
 ../included/src/hw2.3.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.3.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.3.hpp
 ../included/src/simpath.h
-/Users/gengtao/dev/tempC++/project2/included/src/simpath.h
+/Users/gengtao/dev/cpp-base/task2/included/src/simpath.h
 
-/Users/gengtao/dev/tempC++/project2/src/hw2.4.cpp
+/Users/gengtao/dev/cpp-base/task2/src/hw2.4.cpp
 ../included/src/hw2.4.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.4.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/hw2.4.hpp
 
-/Users/gengtao/dev/tempC++/project2/src/main.cpp
-../included/src/catch.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/catch.hpp
-../included/src/hw2.1.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.1.hpp
-../included/src/hw2.2.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.2.hpp
-../included/src/hw2.3.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.3.hpp
-../included/src/hw2.4.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/hw2.4.hpp
-
-/Users/gengtao/dev/tempC++/project2/src/simpath.cpp
+/Users/gengtao/dev/cpp-base/task2/src/simpath.cpp
 ../included/src/simpath.h
-/Users/gengtao/dev/tempC++/project2/included/src/simpath.h
+/Users/gengtao/dev/cpp-base/task2/included/src/simpath.h
 vector
 -
 cmath
@@ -606,7 +518,7 @@ cmath
 random
 -
 
-/Users/gengtao/dev/tempC++/project2/src/testFileStream.cpp
+/Users/gengtao/dev/cpp-base/task2/src/testFileStream.cpp
 ../included/src/testFileStream.hpp
-/Users/gengtao/dev/tempC++/project2/included/src/testFileStream.hpp
+/Users/gengtao/dev/cpp-base/task2/included/src/testFileStream.hpp
 
