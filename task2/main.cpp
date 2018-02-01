@@ -97,6 +97,62 @@ TEST_CASE("HW2.2_TEST", "[BASE]")
 	}
 }
 
+TEST_CASE("HW2.3_TEST", "[BASE]")
+{
+
+	SECTION("HW2.3[normal]")
+	{
+		HW23 *obj = new HW23();
+		REQUIRE(obj != NULL);
+
+		SECTION("HW2.3_normalCDF[normal]")
+		{
+			double result=obj1->normalCDF(0.0);
+			REQUIRE(result==0.5);
+		}
+
+		SECTION("HW2.3_delta[normal]")
+		{
+			double result = obj->Delta(0,30);
+			REQUIRE(result==0.421455);
+		}
+
+		SECTION("HW2.2_buildVector_mix[normal]")
+		{
+			auto result = obj->buildVector("0,1,2 3 4,5");
+			int i = 0;
+			for (auto val : result)
+			{
+				REQUIRE(val == i++);
+			}
+		}
+
+		SECTION("HW2.2_merge[normal]")
+		{
+			std::vector<int> v1 = {0, 1, 3}, v2 = {2, 4}, result;
+			obj->initialize(v1, v2);
+			obj->merge(result, 0, 0);
+			int i = 0;
+			for (auto val : result)
+			{
+				REQUIRE(val == i++);
+			}
+		}
+	}
+	SECTION("HW2.2[error]")
+	{
+		HW22 *obj = new HW22();
+		REQUIRE(obj != NULL);
+
+		SECTION("HW2.2_buildVector[error]")
+		{
+			auto result = obj->buildVector("0|1|2|3|4|5");
+			int i = 0;
+			REQUIRE(result.empty() != true);
+			REQUIRE(result.size() == 0);
+		}
+	}
+}
 int main(int argc, char **argv)
 {
 	std::string message = "enter number [1-4] to run , exit when enter number is [0]\n";
