@@ -1,5 +1,6 @@
 // Main.cpp
 #define CATCH_CONFIG_RUNNER
+#include <limits>
 
 #include "included/src/catch.hpp"
 #include "included/src/hw2.1.hpp"
@@ -104,52 +105,41 @@ TEST_CASE("HW2.3_TEST", "[BASE]")
 	{
 		HW23 *obj = new HW23();
 		REQUIRE(obj != NULL);
-
+	//std::fabs(a-b)<=std::numeric_limits<double> ::epsilon();
 		SECTION("HW2.3_normalCDF[normal]")
 		{
-			double result=obj1->normalCDF(0.0);
-			REQUIRE(result==0.5);
+			double tmp=obj->normalCDF(0.0);
+			bool result =std::fabs(tmp-0.5)<=std::numeric_limits<double> ::epsilon();
+			REQUIRE(result==true);
 		}
 
-		SECTION("HW2.3_delta[normal]")
+		SECTION("HW2.3_Delta[normal]")
 		{
-			double result = obj->Delta(0,30);
-			REQUIRE(result==0.421455);
+			double tmp = obj->Delta(0,30);
+			bool result =std::fabs(tmp-0.421455)<=std::numeric_limits<double> ::epsilon();
+			REQUIRE(result==true);
 		}
 
-		SECTION("HW2.2_buildVector_mix[normal]")
+		SECTION("HW2.3_callPrice[normal]")
 		{
-			auto result = obj->buildVector("0,1,2 3 4,5");
-			int i = 0;
-			for (auto val : result)
-			{
-				REQUIRE(val == i++);
-			}
+			double tmp = obj->callPrice(0,30);
+			bool result =std::fabs(tmp-1.73833)<=std::numeric_limits<double> ::epsilon();
+			REQUIRE(result==true);
 		}
 
-		SECTION("HW2.2_merge[normal]")
+		SECTION("HW2.3_HedgePayoff[normal]")
 		{
-			std::vector<int> v1 = {0, 1, 3}, v2 = {2, 4}, result;
-			obj->initialize(v1, v2);
-			obj->merge(result, 0, 0);
-			int i = 0;
-			for (auto val : result)
-			{
-				REQUIRE(val == i++);
-			}
+			std::vector<double> v1 = {3.4012, 3.5829, 3.52739};
+			double tmp=obj->HedgePayoff(v1);
+			bool result =std::fabs(tmp-2.69568)<=std::numeric_limits<double> ::epsilon();
+			REQUIRE(result==true);
 		}
-	}
-	SECTION("HW2.2[error]")
-	{
-		HW22 *obj = new HW22();
-		REQUIRE(obj != NULL);
-
-		SECTION("HW2.2_buildVector[error]")
+		SECTION("HW2.3_calculateSD[normal]")
 		{
-			auto result = obj->buildVector("0|1|2|3|4|5");
-			int i = 0;
-			REQUIRE(result.empty() != true);
-			REQUIRE(result.size() == 0);
+			double v1[] = {1,1,1};
+			double result=obj->calculateSD(v1,3);
+			
+			REQUIRE(result==0);
 		}
 	}
 }
