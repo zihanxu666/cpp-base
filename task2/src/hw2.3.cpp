@@ -89,7 +89,7 @@ int HW23::service()
 
     double result[4][3][2000];
 
-    int numStepArray[4] = {5, 10, 100, 200};
+    int numStepArray[4] = {5, 10, 20,100};
 
     for (int i = 0; i < 4; i++)
     {
