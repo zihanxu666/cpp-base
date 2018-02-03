@@ -116,8 +116,6 @@ TEST_CASE("HW2.3_TEST", "[BASE]")
 		SECTION("HW2.3_Delta[normal]")
 		{
 			double tmp = obj->Delta(0,30);
-			// bool result =std::fabs(tmp-0.421455)<=std::numeric_limits<double> ::epsilon();
-			// REQUIRE(result==true);
 			char buffer[20];
 			gcvt(tmp,6,buffer);
 			std::string result=buffer;
@@ -128,8 +126,6 @@ TEST_CASE("HW2.3_TEST", "[BASE]")
 		SECTION("HW2.3_callPrice[normal]")
 		{
 			double tmp = obj->callPrice(0,30);
-			// bool result =std::fabs(tmp-1.73833)<=std::numeric_limits<double> ::epsilon();
-			// REQUIRE(result==true);
 			char buffer[20];
 			gcvt(tmp,6,buffer);
 			std::string result=buffer;
@@ -140,8 +136,6 @@ TEST_CASE("HW2.3_TEST", "[BASE]")
 		{
 			std::vector<double> v1 = {1, 1, 1};
 			double tmp=obj->HedgePayoff(v1);
-			// bool result =std::fabs(tmp-1.73833)<=std::numeric_limits<double> ::epsilon();
-			// REQUIRE(result==true);
 			char buffer[20];
 			gcvt(tmp,6,buffer);
 			std::string result=buffer;
