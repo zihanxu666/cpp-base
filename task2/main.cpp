@@ -1,5 +1,6 @@
 // Main.cpp
 #define CATCH_CONFIG_RUNNER
+#include <limits>
 
 #include "included/src/catch.hpp"
 #include "included/src/hw2.1.hpp"
@@ -97,6 +98,51 @@ TEST_CASE("HW2.2_TEST", "[BASE]")
 	}
 }
 
+TEST_CASE("HW2.3_TEST", "[BASE]")
+{
+
+	SECTION("HW2.3[normal]")
+	{
+		HW23 *obj = new HW23();
+		REQUIRE(obj != NULL);
+	//std::fabs(a-b)<=std::numeric_limits<double> ::epsilon();
+		SECTION("HW2.3_normalCDF[normal]")
+		{
+			double tmp=obj->normalCDF(0.0);
+			bool result =std::fabs(tmp-0.5)<=std::numeric_limits<double> ::epsilon();
+			REQUIRE(result==true);
+		}
+
+		SECTION("HW2.3_Delta[normal]")
+		{
+			double tmp = obj->Delta(0,30);
+			bool result =std::fabs(tmp-0.421455)<=std::numeric_limits<double> ::epsilon();
+			REQUIRE(result==true);
+		}
+
+		SECTION("HW2.3_callPrice[normal]")
+		{
+			double tmp = obj->callPrice(0,30);
+			bool result =std::fabs(tmp-1.73833)<=std::numeric_limits<double> ::epsilon();
+			REQUIRE(result==true);
+		}
+
+		SECTION("HW2.3_HedgePayoff[normal]")
+		{
+			std::vector<double> v1 = {3.4012, 3.5829, 3.52739};
+			double tmp=obj->HedgePayoff(v1);
+			bool result =std::fabs(tmp-2.69568)<=std::numeric_limits<double> ::epsilon();
+			REQUIRE(result==true);
+		}
+		SECTION("HW2.3_calculateSD[normal]")
+		{
+			double v1[] = {1,1,1};
+			double result=obj->calculateSD(v1,3);
+			
+			REQUIRE(result==0);
+		}
+	}
+}
 int main(int argc, char **argv)
 {
 	std::string message = "enter number [1-4] to run , exit when enter number is [0]\n";
