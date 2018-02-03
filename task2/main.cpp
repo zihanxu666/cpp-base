@@ -93,7 +93,7 @@ TEST_CASE("HW2.2_TEST", "[BASE]")
 			auto result = obj->buildVector("0|1|2|3|4|5");
 			int i = 0;
 			REQUIRE(result.empty() != true);
-			REQUIRE(result.size() == 0);
+			REQUIRE(result.size() == 1);
 		}
 	}
 }
@@ -105,7 +105,6 @@ TEST_CASE("HW2.3_TEST", "[BASE]")
 	{
 		HW23 *obj = new HW23();
 		REQUIRE(obj != NULL);
-	//std::fabs(a-b)<=std::numeric_limits<double> ::epsilon();
 		SECTION("HW2.3_normalCDF[normal]")
 		{
 			double tmp=obj->normalCDF(0.0);
@@ -129,9 +128,9 @@ TEST_CASE("HW2.3_TEST", "[BASE]")
 
 		SECTION("HW2.3_HedgePayoff[normal]")
 		{
-			std::vector<double> v1 = {3.4012, 3.5829, 3.52739};
+			std::vector<double> v1 = {1, 1, 1};
 			double tmp=obj->HedgePayoff(v1);
-			bool result =std::fabs(tmp-2.69568)<=std::numeric_limits<double> ::epsilon();
+			bool result =std::fabs(tmp-1.73833)<=std::numeric_limits<double> ::epsilon();
 			REQUIRE(result==true);
 		}
 		SECTION("HW2.3_calculateSD[normal]")
