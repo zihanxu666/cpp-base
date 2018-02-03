@@ -54,7 +54,7 @@ double HW23::calculateSD(double *data, int n)
 
     return sqrt(standardDeviation / n);
 }
-
+//get hedge error, terminal stock price and terminal portfolio value(hedge payoff) when simulate N=2000.
 void HW23::calculate(double *error, double *stockPrice, double *hedgePayoff, int numStep)
 {
     for (int i = 0; i < 2000; i++)
@@ -65,7 +65,7 @@ void HW23::calculate(double *error, double *stockPrice, double *hedgePayoff, int
 
         optionPayoff = std::exp(path[numStep]) - 32 > 0 ? std::exp(path[numStep]) - 32 : 0; //option payoff=max(S-K,0)
 
-        error[i] = optionPayoff - HedgePayoff(path);
+        error[i] = optionPayoff - HedgePayoff(path);//hedge error
         stockPrice[i] = std::exp(path[numStep]);
         hedgePayoff[i] = HedgePayoff(path);
     }
@@ -77,7 +77,7 @@ void HW23::writeResultToFile(double *stockPrice, double *hedgePayoff, int numSte
     std::string fileName = "numstep";
     fileName.append("_").append(std::to_string(numStep)).append(".csv");
     output.open(fileName);
-    for (int i = 0; i < 2000; i++)
+    for (int i = 0; i < 2000; i++)//save stock price and hedge payoff into a csv file
     {
         output << stockPrice[i] << "," << hedgePayoff[i] << "\n";
     }
@@ -86,7 +86,7 @@ void HW23::writeResultToFile(double *stockPrice, double *hedgePayoff, int numSte
 
 int HW23::service()
 {
-
+//4 denote numStep=5,10,20,100; 3 denote hedge error, stock price and terminal portfolio value; 2000 denote N=2000 paths
     double result[4][3][2000];
 
     int numStepArray[4] = {5, 10, 20,100};
