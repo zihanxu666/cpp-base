@@ -28,3 +28,4 @@ public:
 private:
 	double strike;
 };
+
