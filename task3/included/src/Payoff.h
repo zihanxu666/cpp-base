@@ -1,0 +1,48 @@
+#pragma once
+
+class Payoff
+{
+ public:
+	virtual double operator()(double spot) const = 0;
+};
+
+class Call : public Payoff
+{
+ public:
+  Call(double strike) : strike(strike) { }
+	double operator()(double spot) const
+	{
+		return spot > strike ? spot - strike : 0;
+	}
+ private:
+	double strike;
+};
+
+class Put : public Payoff
+{
+public:
+	double operator()(double spot) const
+	{
+		return strike > spot ? strike - spot : 0;
+	}
+private:
+	double strike;
+};
+
+class Strangle:public Payoff
+{
+	public:
+	Strangle(double strike1,double strike2) : strike1(strike1),strike2(strike2) { }
+	double operator()(double spot) const
+	{
+		if(spot<=strike1){
+			return strike2-spot;
+		}
+		else if(spot>=strike2){
+            return strike1-spot;
+		}
+		return 0;
+	}
+    private:
+	double strike1,strike2;
+};
