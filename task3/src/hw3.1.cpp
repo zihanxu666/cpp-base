@@ -4,7 +4,7 @@
 int HW31::service()
 {
   // define binomial model
-  BinomialModel my_model(std::exp(0.3 * std::sqrt(0.5 / 20)), 1.0 / std::exp(0.3 * std::sqrt(0.5 / 20)), 0.0, 30.0);
+  BinomialModel my_model(std::exp(0.3 * std::sqrt(0.5 / 20)), 1.0 / std::exp(0.3 * std::sqrt(0.5 / 20)), 0.03, 30.0);
 
   // define the option
   Call my_call(32.0); // initialize with strike price

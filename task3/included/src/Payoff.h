@@ -35,13 +35,18 @@ class Strangle:public Payoff
 	Strangle(double strike1,double strike2) : strike1(strike1),strike2(strike2) { }
 	double operator()(double spot) const
 	{
-		if(spot<=strike1){
+		if(spot<=strike1)
+		{
 			return strike2-spot;
 		}
-		else if(spot>=strike2){
+		else if(spot>=strike2)
+		{
             return strike1-spot;
+		}else
+		{
+			return 0;
 		}
-		return 0;
+		
 	}
     private:
 	double strike1,strike2;

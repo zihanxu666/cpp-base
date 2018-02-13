@@ -19,8 +19,6 @@ class EuropeanVanilla : public VanillaOption
   double price_CRR(const BinomialModel& model) const;
 };
 
-
-
 // to be implemented
 class AmericanVanilla : public VanillaOption
 {
