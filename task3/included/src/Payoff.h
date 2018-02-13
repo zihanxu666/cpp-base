@@ -21,6 +21,7 @@ class Call : public Payoff
 class Put : public Payoff
 {
 public:
+  Put(double strike) : strike(strike) { }
 	double operator()(double spot) const
 	{
 		return strike > spot ? strike - spot : 0;
