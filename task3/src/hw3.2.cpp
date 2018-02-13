@@ -68,7 +68,7 @@ double *confidenceInterval(double mean, double SD)
 
     double upperBound = mean + 1.96 * SD;
     double lowerBound = mean - 1.96 * SD;
-    double result[2] = {upperBound, lowerBound};
+    double result[2] = {lowerBound, upperBound};
     return result;
 }
 
