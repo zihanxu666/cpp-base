@@ -18,7 +18,7 @@ int HW31::service()
   AmericanVanilla my_optionAP(steps_expiry, my_put);
 
   //define the strangle option
-  Strangle my_strangle(30.0,35.0);
+  Strangle my_strangle(30.0,32.0);
   EuropeanVanilla my_optionES(steps_expiry, my_strangle);
   AmericanVanilla my_optionAS(steps_expiry, my_strangle);
 
