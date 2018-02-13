@@ -4,29 +4,36 @@
 
 double uniGenerator()
 {
-    static std::random_device rd;
-    static std::mt19937 rng(rd());
-    static std::uniform_real_distribution<double> uni(0.0, 1.0);
+    std::random_device rd;
+    std::mt19937 rng(rd());
+    std::uniform_real_distribution<double> uni(0.0, 1.0);
     return uni(rng);
+}
+double expGenerator(double lambda){
+    return -std::log(uniGenerator())/lambda; //Y=-ln(U)/lambda~exp(lambda)
 }
 double expVariable()
 {
-    double Y1 = 0.0, Y2 = 0.0;
-    while (Y2 <= pow((1 - Y1), 2) / 2)
-    {
-        Y1 = -std::log(uniGenerator()); //Y=-ln(U)/lambda~exp(lambda), lambda=1
-        Y2 = -std::log(uniGenerator());
-    }
+    double 
+        Y1 = expGenerator(1), 
+        Y2 = expGenerator(1);
+        
+        
+
+    if(Y2 > pow((1 - Y1), 2) / 2)
     return Y1;
+
+    expVariable();
 }
-double normalDistribution()
+double normalGenerator()
 {
     double Z = 0.0;
-    if (uniGenerator() < 0.5)
+    double U = uniGenerator();
+    if (U < 0.5)
     {
         Z = expVariable();
     }
-    else if (uniGenerator() > 0.5)
+    else if (U > 0.5)
     {
         Z = -expVariable();
     }
@@ -81,7 +88,7 @@ int main()
     {
         while (-10 < St < 5)
         {
-            St += normalDistribution();
+            St += normalGenerator();
             time++;
         }
         tau[i] = time;
