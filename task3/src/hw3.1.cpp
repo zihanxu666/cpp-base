@@ -1,6 +1,7 @@
 #include "../included/src/hw3.1.hpp"
 
 
+
 int HW31::service()
 {
   // define binomial model
@@ -9,29 +10,26 @@ int HW31::service()
   // define the call option
   Call my_call(32.0); // initialize with strike price
   unsigned int steps_expiry = 20;
-  EuropeanVanilla my_optionEC(steps_expiry, my_call);
   AmericanVanilla my_optionAC(steps_expiry, my_call);
 
   //define the put option
   Put my_put(30.0); // initialize with strike price
-  EuropeanVanilla my_optionEP(steps_expiry, my_put);
   AmericanVanilla my_optionAP(steps_expiry, my_put);
 
   //define the strangle option
   Strangle my_strangle(30.0,32.0);
-  EuropeanVanilla my_optionES(steps_expiry, my_strangle);
   AmericanVanilla my_optionAS(steps_expiry, my_strangle);
 
   // output price
-  std::cout << "European Call option price under binomial model:" << my_optionEC.price_CRR(my_model) << std::endl;
+  
   
   std::cout << "American Call option price under binomial model:" << my_optionAC.price_Snell(my_model) << std::endl;
 
-  std::cout << "European Put option price under binomial model:" << my_optionEP.price_CRR(my_model) << std::endl;
+  
   
   std::cout << "American Put option price under binomial model:" << my_optionAP.price_Snell(my_model) << std::endl;
 
-  std::cout << "European Strangle option price under binomial model:" << my_optionES.price_CRR(my_model) << std::endl;
+  
   
   std::cout << "American Strangle option price under binomial model:" << my_optionAS.price_Snell(my_model) << std::endl;
 

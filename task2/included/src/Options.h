@@ -19,13 +19,12 @@ class EuropeanVanilla : public VanillaOption
   double price_CRR(const BinomialModel& model) const;
 };
 
-
-/*
 // to be implemented
 class AmericanVanilla : public VanillaOption
 {
   public:
   // ...
+  AmericanVanilla(int expiry, const Payoff& payoff):
+  VanillaOption(expiry, payoff){ }
   double price_Snell(const BinomialModel& model) const;
 };
-*/

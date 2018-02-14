@@ -2,49 +2,8 @@
 #include <random>
 #include <cmath>
 
-double uniGenerator()
-{
-    static std::random_device rd;
-    static std::mt19937 rng(rd());
-    static std::uniform_real_distribution<double> uni(0.0, 1.0);
-    return uni(rng);
-}
-double expGenerator(double lambda)
-{
-    return -std::log(uniGenerator()) / lambda; //Y=-ln(U)/lambda to generate exp(lambda)
-}
-double expVariable()
-{
 
-    double
-        Y1 = expGenerator(1),
-        Y2 = expGenerator(1);
 
-    if (Y2 > pow((1 - Y1), 2) / 2)
-    {
-        return Y1; //base case
-    }
-    else
-    {
-        return expVariable(); //recur
-    }
-}
-//Part(b)
-double normalGenerator()
-{
-    double Z;
-    double U = uniGenerator();
-    double Y = expVariable();
-    if (U < 0.5)
-    {
-        Z = Y;
-    }
-    else if (U > 0.5)
-    {
-        Z = -Y;
-    }
-    return Z;
-}
 double calculateMean(double *data, int n)
 {
     double sum = 0.0;
@@ -79,7 +38,9 @@ double *confidenceInterval(double mean, double SD)
 
 int main()
 {
-    //Part(c)
+    std::random_device rd;
+    std::mt19937 rng(rd());
+    std::normal_distribution<double> norm(0.0, 1.0);
     int t = 0;
     double St = 0;
     double tau[10000];
@@ -87,7 +48,7 @@ int main()
     {
         while (St > -10 && St < 5)
         {
-            St += normalGenerator();
+            St += norm(rng);
             t++;
         }
         tau[i] = t;
@@ -104,3 +65,6 @@ int main()
 
     return 0;
 }
+
+
+

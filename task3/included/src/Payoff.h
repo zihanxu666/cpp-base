@@ -1,5 +1,5 @@
 #pragma once
-
+#include <cassert>
 class Payoff
 {
  public:
@@ -35,14 +35,15 @@ class Strangle:public Payoff
 	public:
 	Strangle(double strike1,double strike2) : strike1(strike1),strike2(strike2) { }
 	double operator()(double spot) const
-	{
+	{   
+		assert(strike1<=strike2);
 		if(spot<=strike1)
 		{
 			return strike2-spot;
 		}
 		else if(spot>=strike2)
 		{
-            return strike1-spot;
+            return spot-strike1;
 		}else
 		{
 			return 0;
