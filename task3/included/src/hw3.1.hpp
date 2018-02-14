@@ -5,5 +5,6 @@
 
 class HW31:public HW
 {
+    public:
     int service();
 };
