@@ -11,7 +11,7 @@ double uniGenerator()
 }
 double expGenerator(double lambda)
 {
-    return -std::log(uniGenerator()) / lambda; //Y=-ln(U)/lambda~exp(lambda)
+    return -std::log(uniGenerator()) / lambda; //Y=-ln(U)/lambda to generate exp(lambda)
 }
 double expVariable()
 {
