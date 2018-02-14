@@ -2,11 +2,12 @@
 #include <random>
 #include <cmath>
 
+
 double uniGenerator()
 {
-    static std::random_device rd;
-    static std::mt19937 rng(rd());
-    static std::uniform_real_distribution<double> uni(0.0, 1.0);
+    std::random_device rd;
+    std::mt19937 rng(rd());
+    std::uniform_real_distribution<double> uni(0.0, 1.0);
     return uni(rng);
 }
 double expGenerator(double lambda)
@@ -73,33 +74,41 @@ double calculateSD(double *data, int n)
 }
 double *confidenceInterval(double mean, double SD)
 {
-
+    double *result;
     double upperBound = mean + 1.96 * SD;
     double lowerBound = mean - 1.96 * SD;
-    double result[2] = {lowerBound, upperBound};
+    result[0]=lowerBound;
+    result[1]=upperBound;
     return result;
 }
 
 int main()
 {
-    unsigned int time = 0;
+    int t= 0;
     double St = 0;
     double tau[10000];
     for (int i = 0; i < 10000; i++)
-    {
+    {  
         while (St > -10 && St < 5)
         {
             St += normalGenerator();
-            time++;
-            std::cout << St << std::endl;
+            t++;
+            
         }
-        tau[i] = time;
+        tau[i] = t;
+        t=0;
+        St=0;
     }
     double mean = calculateMean(tau, 10000);
     double SD = calculateSD(tau, 10000);
     double *interval = confidenceInterval(mean, SD);
-    std::cout << "E(stopping time): " << mean << std::endl;
+
+    std::cout << "E[stopping time]: " << mean << std::endl;
     std::cout << "Standard deviation of stopping time: " << SD << std::endl;
     std::cout << "The 95% confidence interval is [" << interval[0] << ", " << interval[1] << "]." << std::endl;
+
+    
+    
+
     return 0;
 }
