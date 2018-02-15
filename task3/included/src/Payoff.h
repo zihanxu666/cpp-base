@@ -29,7 +29,7 @@ public:
 private:
 	double strike;
 };
-
+//1.(a) Strangle option
 class Strangle:public Payoff
 {
 	public:

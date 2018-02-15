@@ -23,6 +23,7 @@ double EuropeanVanilla::price_CRR(const BinomialModel& model) const
 
   return grid[0];
 }
+//1.(b) American option
 double AmericanVanilla::price_Snell(const BinomialModel& model) const
 {
   std::vector<double> grid(1 + steps_expiry);
