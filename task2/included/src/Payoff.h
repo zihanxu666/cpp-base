@@ -38,11 +38,11 @@ class Strangle:public Payoff
 	{   assert(strike1<=strike2);
 		if(strike1>=spot)
 		{
-			return strike2-spot;
+			return strike1-spot;
 		}
 		else if(spot>=strike2)
 		{
-            return spot-strike1;
+            return spot-strike2;
 		}
 		
 			return 0;

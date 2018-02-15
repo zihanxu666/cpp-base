@@ -14,21 +14,21 @@ int HW24::service()
   // // output price
   // std::cout << "Option price under binomial model:" << my_option.price_CRR(my_model) << std::endl;
 // define binomial model
-  BinomialModel my_model(std::exp(0.3 * std::sqrt(0.5 / 20)), 1.0 / std::exp(0.3 * std::sqrt(0.5 / 20)), 0.03, 30.0);
+  BinomialModel my_model(1.1, 1.0 / 1.1, 0.03, 50.0);
 
   // define the call option
-  Call my_call(40.0); // initialize with strike price
-  unsigned int steps_expiry = 20;
+  Call my_call(52.0); // initialize with strike price
+  unsigned int steps_expiry = 5;
   EuropeanVanilla my_optionEC(steps_expiry, my_call);
   AmericanVanilla my_optionAC(steps_expiry, my_call);
 
   //define the put option
-  Put my_put(30.0); // initialize with strike price
+  Put my_put(50.0); // initialize with strike price
   EuropeanVanilla my_optionEP(steps_expiry, my_put);
   AmericanVanilla my_optionAP(steps_expiry, my_put);
 
   //define the strangle option
-  Strangle my_strangle(34.0,32.0);
+  Strangle my_strangle(52.0,54.0);
   EuropeanVanilla my_optionES(steps_expiry, my_strangle);
   AmericanVanilla my_optionAS(steps_expiry, my_strangle);
 
