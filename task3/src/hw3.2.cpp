@@ -1,19 +1,19 @@
-#include <iostream>
-#include <random>
-#include <cmath>
+#include "../included/src/hw3.2.hpp"
 
-double uniGenerator()
+HW32::HW32(Generator * generator)
 {
-    static std::random_device rd;
-    static std::mt19937 rng(rd());
-    static std::uniform_real_distribution<double> uni(0.0, 1.0);
-    return uni(rng);
+    _generator=generator;
 }
-double expGenerator(double lambda)
+
+double HW32::generator()
 {
-    return -std::log(uniGenerator()) / lambda; //Y=-ln(U)/lambda to generate exp(lambda)
+    return _generator->generator();
 }
-double expVariable()
+double HW32::expGenerator(double lambda)
+{
+    return -std::log(generator()) / lambda; //Y=-ln(U)/lambda to generate exp(lambda)
+}
+double HW32::expVariable()
 {
 
     double
@@ -30,10 +30,10 @@ double expVariable()
     }
 }
 //Part(b)
-double normalGenerator()
+double HW32::normalGenerator()
 {
     double Z;
-    double U = uniGenerator();
+    double U = generator();
     double Y = expVariable();
     if (U < 0.5)
     {
@@ -45,7 +45,7 @@ double normalGenerator()
     }
     return Z;
 }
-double calculateMean(double *data, int n)
+double HW32::calculateMean(double *data, int n)
 {
     double sum = 0.0;
 
@@ -58,7 +58,7 @@ double calculateMean(double *data, int n)
 
     return sum / n;
 }
-double calculateSD(double *data, double mean, int n)
+double HW32::calculateSD(double *data, double mean, int n)
 {
     double standardDeviation = 0.0;
 
@@ -69,7 +69,7 @@ double calculateSD(double *data, double mean, int n)
 
     return sqrt(standardDeviation / n);
 }
-double *confidenceInterval(double mean, double SD)
+double * HW32::confidenceInterval(double mean, double SD)
 {
     double *result;
     result[0] = mean - 1.96 * SD;
@@ -77,7 +77,7 @@ double *confidenceInterval(double mean, double SD)
     return result;
 }
 
-int main()
+int HW32::service()
 {
     //Part(c)
     int t = 0;

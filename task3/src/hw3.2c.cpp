@@ -1,10 +1,7 @@
-#include <iostream>
-#include <random>
-#include <cmath>
+#include "../included/src/hw3.2c.hpp"
 
 
-
-double calculateMean(double *data, int n)
+double HW32c::calculateMean(double *data, int n)
 {
     double sum = 0.0;
 
@@ -17,7 +14,7 @@ double calculateMean(double *data, int n)
 
     return sum / n;
 }
-double calculateSD(double *data, double mean, int n)
+double HW32c::calculateSD(double *data, double mean, int n)
 {
     double standardDeviation = 0.0;
 
@@ -28,7 +25,7 @@ double calculateSD(double *data, double mean, int n)
 
     return sqrt(standardDeviation / n);
 }
-double *confidenceInterval(double mean, double SD)
+double * HW32c::confidenceInterval(double mean, double SD)
 {
     double *result;
     result[0] = mean - 1.96 * SD;
@@ -36,7 +33,7 @@ double *confidenceInterval(double mean, double SD)
     return result;
 }
 
-int main()
+int HW32c::service()
 {
     std::random_device rd;
     std::mt19937 rng(rd());
