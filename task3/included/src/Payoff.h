@@ -29,7 +29,7 @@ public:
 private:
 	double strike;
 };
-
+//1.(a) Strangle option
 class Strangle:public Payoff
 {
 	public:
@@ -39,11 +39,11 @@ class Strangle:public Payoff
 		assert(strike1<=strike2);
 		if(spot<=strike1)
 		{
-			return strike2-spot;
+			return strike1-spot;
 		}
 		else if(spot>=strike2)
 		{
-            return spot-strike1;
+            return spot-strike2;
 		}else
 		{
 			return 0;
