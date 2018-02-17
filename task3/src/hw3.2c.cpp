@@ -27,7 +27,7 @@ double HW32c::calculateSD(double *data, double mean, int n)
 }
 double * HW32c::confidenceInterval(double mean, double SD)
 {
-    double *result;
+    double *result=new double[2];
     result[0] = mean - 1.96 * SD;
     result[1] = mean + 1.96 * SD;
     return result;
