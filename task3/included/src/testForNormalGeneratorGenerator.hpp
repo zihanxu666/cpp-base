@@ -1,8 +1,9 @@
 #include "baseGenerator.hpp"
 
-
 class TestForNormalGeneratorGenerator : public Generator
 {
-    public:
+  private:
+    int mark=0;
+  public:
     double generator();
 };

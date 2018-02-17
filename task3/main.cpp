@@ -4,7 +4,6 @@
 #include <string>
 #include <cstdlib>
 
-
 #include "included/src/catch.hpp"
 #include "included/src/hw3.1.hpp"
 #include "included/src/hw3.2.hpp"
@@ -29,76 +28,72 @@ TEST_CASE("HW3.2_TEST", "[BASE]")
 
 		SECTION("HW3.2_expGenerator[normal]")
 		{
-			HW32 *obj = new HW32(GeneratorBuilder::getGeneratorBuilder(GeneratorType::TEST_EXP_GENERATOR));
+
+			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::TEST_EXP_GENERATOR));
 			REQUIRE(obj != NULL);
-			auto result = obj->expGenerator(.0);
-			
+			auto tmp = obj->expGenerator(1);
+			char buffer[20];
+			gcvt(tmp, 6, buffer);
+			std::string result = buffer;
+			REQUIRE(result == "0.223144");
 		}
 
 		SECTION("HW3.2_expVariable[normal]")
 		{
-			HW32 *obj = new HW32(GeneratorBuilder::getGeneratorBuilder(GeneratorType::TEST_EXP_VARABLE));
+			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::TEST_EXP_VARABLE));
 			REQUIRE(obj != NULL);
-			auto result = obj->buildVector("0 1 2 3 4 5");
-			int i = 0;
-			for (auto val : result)
-			{
-				REQUIRE(val == i++);
-			}
+			auto tmp = obj->expVariable();
+			char buffer[20];
+			gcvt(tmp, 6, buffer);
+			std::string result = buffer;
+			REQUIRE(result == "0.693147");
 		}
 
 		SECTION("HW3.2_normalGenerator[normal]")
 		{
-			HW32 *obj = new HW32(GeneratorBuilder::getGeneratorBuilder(GeneratorType::TEST_NORMAL));
+			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::TEST_NORMAL));
 			REQUIRE(obj != NULL);
-			auto result = obj->buildVector("0,1,2 3 4,5");
-			int i = 0;
-			for (auto val : result)
-			{
-				REQUIRE(val == i++);
-			}
+			auto tmp = obj->normalGenerator();
+			char buffer[20];
+			gcvt(tmp, 6, buffer);
+			std::string result = buffer;
+			REQUIRE(result == "0.693147");
 		}
 
 		SECTION("HW3.2_calculateMean[normal]")
 		{
-			std::Enum
-			HW32 *obj = new HW32();
+			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::SIMPLE));
 			REQUIRE(obj != NULL);
-			std::vector<int> v1 = {0, 1, 3}, v2 = {2, 4}, result;
-			obj->initialize(v1, v2);
-			obj->merge(result, 0, 0);
-			int i = 0;
-			for (auto val : result)
-			{
-				REQUIRE(val == i++);
-			}
+			double array[3] = {0.1, 0.1, 0.1};
+
+			auto tmp = obj->calculateMean(array, 3);
+			char buffer[20];
+			gcvt(tmp, 3, buffer);
+			std::string result = buffer;
+			REQUIRE(result == "0.1");
 		}
 
 		SECTION("HW3.2_calculateSD[normal]")
 		{
-			HW32 *obj = new HW32();
+			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::SIMPLE));
 			REQUIRE(obj != NULL);
-			std::vector<int> v1 = {0, 1, 3}, v2 = {2, 4}, result;
-			obj->initialize(v1, v2);
-			obj->merge(result, 0, 0);
-			int i = 0;
-			for (auto val : result)
-			{
-				REQUIRE(val == i++);
-			}
+			double array[3] = {0.1, 0.1, 0.1};
+			auto tmp = obj->calculateSD(array, 0.1, 3);
+			REQUIRE(tmp == 0);
 		}
 		SECTION("HW3.2_confidenceInterval[normal]")
 		{
-			HW32 *obj = new HW32();
+			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::SIMPLE));
 			REQUIRE(obj != NULL);
-			std::vector<int> v1 = {0, 1, 3}, v2 = {2, 4}, result;
-			obj->initialize(v1, v2);
-			obj->merge(result, 0, 0);
-			int i = 0;
-			for (auto val : result)
-			{
-				REQUIRE(val == i++);
-			}
+			auto *tmp = obj->confidenceInterval(0, 1);
+			char buffer1[20];
+			char buffer2[20];
+			gcvt(*tmp, 3, buffer1);
+			gcvt(*(tmp + 1), 3, buffer2);
+			std::string lower = buffer1;
+			std::string upper = buffer2;
+			REQUIRE(lower == "-1.96");
+			REQUIRE(upper == "1.96");
 		}
 	}
 }
@@ -110,32 +105,37 @@ TEST_CASE("HW3.2c_TEST", "[BASE]")
 	{
 		HW32c *obj = new HW32c();
 		REQUIRE(obj != NULL);
-		
+
 		SECTION("HW2.3_calculateMean[normal]")
 		{
-			double tmp = obj->calculateMean();
-			bool result = std::fabs(tmp - 0.5) <= std::numeric_limits<double>::epsilon();
-			REQUIRE(result == true);
+			double array[3] = {0.1, 0.1, 0.1};
+
+			auto tmp = obj->calculateMean(array, 3);
+			char buffer[20];
+			gcvt(tmp, 3, buffer);
+			std::string result = buffer;
+			REQUIRE(result == "0.1");
 		}
 
 		SECTION("HW3.2c_calculateSD[normal]")
 		{
-			double tmp = obj->calculateSD();
-			char buffer[20];
-			gcvt(tmp, 6, buffer);
-			std::string result = buffer;
-			REQUIRE(result == "0.421455");
+			double array[3] = {0.1, 0.1, 0.1};
+			auto tmp = obj->calculateSD(array, 0.1, 3);
+			REQUIRE(tmp == 0);
 		}
 
 		SECTION("HW3.2c_confidenceInterval]")
 		{
-			double * tmp = obj->confidenceInterval(0, 30);
-			char buffer[20];
-			gcvt(tmp, 6, buffer);
-			std::string result = buffer;
-			REQUIRE(result == "1.73833");
+			auto *tmp = obj->confidenceInterval(0, 1);
+			char buffer1[20];
+			char buffer2[20];
+			gcvt(*tmp, 3, buffer1);
+			gcvt(*(tmp + 1), 3, buffer2);
+			std::string lower = buffer1;
+			std::string upper = buffer2;
+			REQUIRE(lower == "-1.96");
+			REQUIRE(upper == "1.96");
 		}
-
 	}
 }
 
@@ -157,7 +157,7 @@ int main(int argc, char **argv)
 	HW *objArray[hw_length];
 
 	objArray[0] = new HW31();
-	objArray[1] = new HW32(GeneratorBuilder::getGeneratorBuilder(GeneratorType::UNI));
+	objArray[1] = new HW32(GeneratorBuilder::getGenerator(GeneratorType::UNI));
 	objArray[2] = new HW32c();
 
 	while (command != 0)
@@ -177,6 +177,6 @@ int main(int argc, char **argv)
 	{
 		delete p;
 	}
-    	
+
 	std::cout << "bye..." << std::endl;
 }
