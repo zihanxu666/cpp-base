@@ -7,12 +7,18 @@
 
 #include <string>
 
-enum class GeneratorType{SIMPLE,UNI,TEST_EXP_GENERATOR,TEST_EXP_VARABLE,TEST_NORMAL};
+enum class GeneratorType
+{
+    SIMPLE,
+    UNI,
+    TEST_EXP_GENERATOR,TEST_EXP_VARABLE,
+    TEST_NORMAL
+};
 
 class GeneratorBuilder
 {
     public:
     private:
     public:
-    static Generator * getGeneratorBuilder(GeneratorType type);
+    static Generator * getGenerator(GeneratorType type);
 };

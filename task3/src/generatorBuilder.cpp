@@ -1,7 +1,7 @@
 #include "../included/src/generatorBuilder.hpp"
 
 
-Generator * GeneratorBuilder::getGeneratorBuilder(GeneratorType type)
+Generator * GeneratorBuilder::getGenerator(GeneratorType type)
 {
     Generator * result=NULL;
 
