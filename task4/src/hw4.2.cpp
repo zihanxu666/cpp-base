@@ -9,14 +9,9 @@ Eigen::VectorXd getOmega(Eigen::MatrixXd mu, Eigen::MatrixXd Sigma)
 
     Eigen::MatrixXd oneVector(3,1);
     oneVector.setOnes(3,1);
-    double lambda = 1.5;
-
-    
+    double lambda = 1.5;  
     double sigmaFactor = (oneVector.transpose() * Sigma.inverse() * oneVector)(0);
-
-    
     double muFactor = (oneVector.transpose() * Sigma.inverse() * mu)(0);
-
     
     Eigen::VectorXd omega = (Sigma.inverse() * oneVector) / sigmaFactor + (sigmaFactor * Sigma.inverse() * mu - muFactor * Sigma.inverse() * oneVector) / (sigmaFactor * lambda);
     return omega;
@@ -42,7 +37,8 @@ int main()
 
     MVNormal monthlyReturn(mu, Sigma);
 
-    Eigen::MatrixXd omega.col(0) = getOmega(mu, Sigma); //true optimal weight
+    Eigen::MatrixXd omega(3,1);
+    omega.col(0) = getOmega(mu, Sigma); //true optimal weight
     //repeat 500 times
     Eigen::MatrixXd omega500(3, 500); //
     Eigen::MatrixXd meanVariance(4, 500);

@@ -7,7 +7,7 @@ double payoff(double spot, double strike)
 {
     return spot > strike ? (spot - strike) : 0;
 }
-
+//simulate spot price using classical BS model
 double spotPrice(double maturity)
 {
     double s_0 = std::log(50.0), r = 0.05, sigma = 0.3;
@@ -19,7 +19,7 @@ double spotPrice(double maturity)
     double drift_log = r - 0.5 * sigma * sigma;
     double dt = maturity, sqrt_dt = std::sqrt(dt);
     double dW = sqrt_dt * norm(rng);
-    double log_price = drift_log * dt + sigma * dW;
+    double log_price = s_0+drift_log * dt + sigma * dW;
 
     return std::exp(log_price);
 }
@@ -32,6 +32,16 @@ double *getSpotPrice(int n)
     }
     return S_T;
 }
+double *getY(double *spotPrice, int n)
+{
+    double *Y = new double[n];
+    for (int i = 0; i < n; i++)
+    {
+        Y[i] = payoff(spotPrice[i], 55);
+    }
+    return Y;
+}
+
 double calculateMean(double *data, int n)
 {
     double sum = 0.0;
@@ -73,15 +83,7 @@ double getb(double *spotPrice, double *payoff, int n)
     return b;
 }
 
-double *getY(double *spotPrice, int n)
-{
-    double *Y = new double[n];
-    for (int i = 0; i < n; i++)
-    {
-        Y[i] = payoff(spotPrice[i], 55);
-    }
-    return Y;
-}
+
 
 double *getYb(double *spotPrice, double *Y, int n)
 {
@@ -97,11 +99,6 @@ double *getYb(double *spotPrice, double *Y, int n)
 
 int main()
 {
-    //set up model
-    double maturity = 0.25;
-    double strike = 55;
-
-    
     double Y_bar[4][10000];
     double Yb_bar[4][10000];
     int N[4] = {10, 100, 1000, 10000};
@@ -126,6 +123,5 @@ int main()
         variance[i][1]=calculateVariance(Yb_bar[i],10000);
         rho[i]=1-variance[i][1]/variance[i][0];
     }
-
     return 0;
 }
