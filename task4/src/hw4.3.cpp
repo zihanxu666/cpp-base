@@ -76,7 +76,24 @@ double calculateCovariance(double *data1, double *data2, int n)
 
     return covariance / n;
 }
+double calculateSD(double *data, int n)
+{
+    double mean, variance = 0.0;
 
+    mean = calculateMean(data, n);
+
+    for (int i = 0; i < n; i++)
+        variance += pow(data[i] - mean, 2);
+
+    return sqrt(variance / (n-1));
+}
+double * confidenceInterval(double mean, double SD)
+{
+    double *result=new double[2];
+    result[0] = mean - 1.96 * SD;
+    result[1] = mean + 1.96 * SD;
+    return result;
+}
 double getb(double *spotPrice, double *payoff, int n)
 {
     double b = calculateCovariance(spotPrice, payoff, n) / calculateVariance(spotPrice, n);
@@ -99,18 +116,19 @@ double *getYb(double *spotPrice, double *Y, int n)
 
 int main()
 {
+    double r=0.05, T=0.25, strike=55.0;
     double Y_bar[4][10000];
     double Yb_bar[4][10000];
     int N[4] = {10, 100, 1000, 10000};
     
-    double b[4];
+    double b[4][10000];
     for (int k = 0; k < 10000; k++)
     {
         for (int i = 0; i < 4; i++)
         { 
             double *S_T=getSpotPrice(N[i]);
             double *Y=getY(S_T,N[i]);
-            b[i] = getb(S_T, Y, N[i]);
+            b[i][k] = getb(S_T, Y, N[i]);
             double *Yb = getYb(S_T, Y, N[i]);
             Y_bar[i][k] = calculateMean(Y, N[i]);
             Yb_bar[i][k] = calculateMean(Yb, N[i]);
@@ -122,6 +140,7 @@ int main()
         variance[i][0]=calculateVariance(Y_bar[i],10000);
         variance[i][1]=calculateVariance(Yb_bar[i],10000);
         rho[i]=1-variance[i][1]/variance[i][0];
+        std::cout<<"When n = [ "<<N[i]<<" ]. The variance of Y is "<<variance[i][0]<<" , the variance of Y(b) is "<<variance[i][1]<<", and rho is "<<rho[i]<<std::endl;
     }
     return 0;
 }
