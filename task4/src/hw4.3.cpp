@@ -105,28 +105,26 @@ int main()
     double Y_bar[4][10000];
     double Yb_bar[4][10000];
     int N[4] = {10, 100, 1000, 10000};
-    double S_T[4][N[4]];
-    double Y[4][N[4]];
+    
     double b[4];
     for (int k = 0; k < 10000; k++)
     {
         for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < N[i]; j++)
-            {
-                S_T[i][j] = spotPrice(maturity);
-                Y[i][j] = payoff(S_T[i][j], strike);
-            }
-            b[i] = getb(S_T[i], Y[i], N[i]);
-            double *Yb = getYb(S_T[i], Y[i], N[i]);
-            Y_bar[i][k] = calculateMean(Y[i], N[i]);
+        { 
+            double *S_T=getSpotPrice(N[i]);
+            double *Y=getY(S_T,N[i]);
+            b[i] = getb(S_T, Y, N[i]);
+            double *Yb = getYb(S_T, Y, N[i]);
+            Y_bar[i][k] = calculateMean(Y, N[i]);
             Yb_bar[i][k] = calculateMean(Yb, N[i]);
         }
     }
     double variance[4][2];
+    double rho[4];
     for (int i=0;i<4;i++){
         variance[i][1]=calculateVariance(Y_bar[i],10000);
         variance[i][2]=calculateVariance(Yb_bar[i],10000);
+        rho[i]=1-variance[i][2]/variance[i][1];
     }
 
     return 0;
