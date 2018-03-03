@@ -122,9 +122,9 @@ int main()
     double variance[4][2];
     double rho[4];
     for (int i=0;i<4;i++){
-        variance[i][1]=calculateVariance(Y_bar[i],10000);
-        variance[i][2]=calculateVariance(Yb_bar[i],10000);
-        rho[i]=1-variance[i][2]/variance[i][1];
+        variance[i][0]=calculateVariance(Y_bar[i],10000);
+        variance[i][1]=calculateVariance(Yb_bar[i],10000);
+        rho[i]=1-variance[i][1]/variance[i][0];
     }
 
     return 0;
