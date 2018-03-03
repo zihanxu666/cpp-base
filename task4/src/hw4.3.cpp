@@ -107,8 +107,6 @@ int main()
     int N[4] = {10, 100, 1000, 10000};
     double S_T[4][N[4]];
     double Y[4][N[4]];
-    double Y_b[4][N[4]];
-    
     double b[4];
     for (int k = 0; k < 10000; k++)
     {
@@ -120,9 +118,9 @@ int main()
                 Y[i][j] = payoff(S_T[i][j], strike);
             }
             b[i] = getb(S_T[i], Y[i], N[i]);
-            Y_b[i] = getYb(S_T[i], Y[i], N[i]);
+            double *Yb = getYb(S_T[i], Y[i], N[i]);
             Y_bar[i][k] = calculateMean(Y[i], N[i]);
-            Yb_bar[i][k] = calculateMean(Y_b[i], N[i]);
+            Yb_bar[i][k] = calculateMean(Yb, N[i]);
         }
     }
     double variance[4][2];
