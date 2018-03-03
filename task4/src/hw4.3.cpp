@@ -114,10 +114,18 @@ int main()
             double *Yb = getYb(S_T, Y, N[i]);
             Y_bar[i][k] = calculateMean(Y, N[i]);
             Yb_bar[i][k] = calculateMean(Yb, N[i]);
+            delete S_T;
+            delete Y;
+            delete Yb;
+        }
+        if(k%1000==0)
+        {
+            std::cout<<k<<std::endl;   
         }
     }
     double variance[4][2];
     double rho[4];
+    std::cout<<"print result..."<<std::endl;
     for (int i=0;i<4;i++){
         variance[i][0]=calculateVariance(Y_bar[i],10000);
         variance[i][1]=calculateVariance(Yb_bar[i],10000);
