@@ -3,22 +3,22 @@
 #include "../included/src/MVNormal.hpp"
 #include <fstream>
 
-Eigen::VectorXd getOmega(Eigen::MatrixXd mu_hat, Eigen::MatrixXd Sigma_hat)
+Eigen::VectorXd getOmega(Eigen::MatrixXd mu, Eigen::MatrixXd Sigma)
 {
     //omega estimation
 
     Eigen::MatrixXd oneVector(3,1);
     oneVector.setOnes(3,1);
-    int lambda = 1.5;
+    double lambda = 1.5;
 
-    //1.transpose()*Sigma_hat.inverse()*1
-    double sigmaFactor = (oneVector.transpose() * Sigma_hat.inverse() * oneVector)(0);
+    
+    double sigmaFactor = (oneVector.transpose() * Sigma.inverse() * oneVector)(0);
 
-    //1.transpose()*Sigma_hat.inverse()*mu_hat
-    double muFactor = (oneVector.transpose() * Sigma_hat.inverse() * mu_hat)(0);
+    
+    double muFactor = (oneVector.transpose() * Sigma.inverse() * mu)(0);
 
-    //use Sigma_hat, mu_hat to calculate omega vector
-    Eigen::VectorXd omega = (Sigma_hat.inverse() * oneVector) / sigmaFactor + (sigmaFactor * Sigma_hat.inverse() * mu_hat - muFactor * Sigma_hat.inverse() * oneVector) / (sigmaFactor * lambda);
+    
+    Eigen::VectorXd omega = (Sigma.inverse() * oneVector) / sigmaFactor + (sigmaFactor * Sigma.inverse() * mu - muFactor * Sigma.inverse() * oneVector) / (sigmaFactor * lambda);
     return omega;
 }
 
@@ -92,7 +92,7 @@ int main()
         meanVariance(2,j)= portfolioTheoretical.row(j).mean();
         meanVariance(3,j) = calculateVariance(portfolioTheoretical.row(j), 24);
     }
-
+    std::cout<<omega;
     //output data
     std::ofstream myfile;
     myfile.open("output1.csv");

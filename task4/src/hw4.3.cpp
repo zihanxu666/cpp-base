@@ -1,37 +1,135 @@
 #include <iostream>
-#include "../included/src/BSMModel.h"
-#include <vector>
 #include <random>
 #include <cmath>
+#include <vector>
+//call option payoff
+double payoff(double spot, double strike)
+{
+    return spot > strike ? (spot - strike) : 0;
+}
 
+double spotPrice(double maturity)
+{
+    double s_0 = std::log(50.0), r = 0.05, sigma = 0.3;
 
-int main(int argc, const char * argv[]) {
-    //set up model
-    double interest = 0.05, sigma = 0.3;
-    BSMModel myModel(interest,sigma);
-    double S_0 = 50.0, maturity = 0.25;
-    double strike = 55;
-    
-    unsigned sample = 10; //10000 samples are needed
-    double spotPrice[sample]; //10000 spot prices
-    double optionPayoff[sample];
-    
-    for(int i = 0; i < sample; ++i){
-        //generate BSM spot prices
-        spotPrice[i] = myModel.sim_path(maturity, S_0, 2)[1]; //terminal spot price
-        std::cout << spotPrice[i] << std::endl;
-        
-        //call option payoff (S-K)+
-        if(spotPrice[i] > strike)
-            optionPayoff[i] = spotPrice[i]-strike;
-        else
-            optionPayoff[i] = 0;
-        std::cout << optionPayoff[i] << std::endl;
+    std::random_device rd;
+    std::mt19937 rng(rd());
+    std::normal_distribution<double> norm(0.0, 1.0);
+
+    double drift_log = r - 0.5 * sigma * sigma;
+    double dt = maturity, sqrt_dt = std::sqrt(dt);
+    double dW = sqrt_dt * norm(rng);
+    double log_price = drift_log * dt + sigma * dW;
+
+    return std::exp(log_price);
+}
+double *getSpotPrice(int n)
+{
+    double *S_T = new double[n];
+    for (int i = 0; i < n; i++)
+    {
+        S_T[i] = spotPrice(0.25);
     }
-    
+    return S_T;
+}
+double calculateMean(double *data, int n)
+{
+    double sum = 0.0;
+
+    for (int i = 0; i < n; i++)
+    {
+        sum += data[i];
+    }
+
+    return sum / n;
+}
+double calculateVariance(double *data, int n)
+{
+    double mean, variance = 0.0;
+
+    mean = calculateMean(data, n);
+
+    for (int i = 0; i < n; i++)
+        variance += pow(data[i] - mean, 2);
+
+    return variance / n;
+}
+double calculateCovariance(double *data1, double *data2, int n)
+{
+    double mean1, mean2, covariance = 0.0;
+
+    mean1 = calculateMean(data1, n);
+    mean2 = calculateMean(data2, n);
+
+    for (int i = 0; i < n; i++)
+        covariance += (data1[i] - mean1) * (data2[i] - mean2);
+
+    return covariance / n;
+}
+
+double getb(double *spotPrice, double *payoff, int n)
+{
+    double b = calculateCovariance(spotPrice, payoff, n) / calculateVariance(spotPrice, n);
+    return b;
+}
+
+double *getY(double *spotPrice, int n)
+{
+    double *Y = new double[n];
+    for (int i = 0; i < n; i++)
+    {
+        Y[i] = payoff(spotPrice[i], 55);
+    }
+    return Y;
+}
+
+double *getYb(double *spotPrice, double *Y, int n)
+{
+    double r = 0.05, T = 0.25, s_0 = 50;
+    double *Yb = new double[n];
+    double b = getb(spotPrice, Y, n);
+    for (int i = 0; i < n; i++)
+    {
+        Yb[i] = Y[i] - b * (spotPrice[i] - std::exp(r * T) * s_0);
+    }
+    return Yb;
+}
+
+int main()
+{
+    //set up model
+    double maturity = 0.25;
+    double strike = 55;
 
     
+    double Y_bar[4][10000];
+    double Yb_bar[4][10000];
+    int N[4] = {10, 100, 1000, 10000};
+    double S_T[4][N[4]];
+    double Y[4][N[4]];
+    double Y_b[4][N[4]];
     
-    
+    double b[4];
+    for (int k = 0; k < 10000; k++)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < N[i]; j++)
+            {
+                S_T[i][j] = spotPrice(maturity);
+                Y[i][j] = payoff(S_T[i][j], strike);
+            }
+            b[i] = getb(S_T[i], Y[i], N[i]);
+            Y_b[i] = getYb(S_T[i], Y[i], N[i]);
+            Y_bar[i][k] = calculateMean(Y[i], N[i]);
+            Yb_bar[i][k] = calculateMean(Y_b[i], N[i]);
+        }
+    }
+    double variance[4][2];
+    for (int i=0;i<4;i++){
+        variance[i][1]=calculateVariance(Y_bar[i],10000);
+        variance[i][2]=calculateVariance(Yb_bar[i],10000);
+    }
+
     return 0;
 }

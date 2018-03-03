@@ -1,14 +1,8 @@
-//  MVNormal.hpp
-//  Problem1
-//  HW 4
-//  Created by Yu Dai on 2/19/18.
-
-
 #ifndef MVNormal_hpp
 #define MVNormal_hpp
 
 #include <stdio.h>
-#include <Eigen/Dense>
+#include "Eigen/Eigen"
 #include <random>
 
 class MVNormal  // lots of room for improvement
