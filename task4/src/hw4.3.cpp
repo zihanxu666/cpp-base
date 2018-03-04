@@ -121,14 +121,13 @@ int main()
     double Yb_bar[4][10000];
     int N[4] = {10, 100, 1000, 10000};
     
-    double b[4][10000];
+    
     for (int k = 0; k < 10000; k++)
     {
         for (int i = 0; i < 4; i++)
         { 
             double *S_T=getSpotPrice(N[i]);
             double *Y=getY(S_T,N[i]);
-            b[i][k] = getb(S_T, Y, N[i]);
             double *Yb = getYb(S_T, Y, N[i]);
             Y_bar[i][k] = calculateMean(Y, N[i]);
             Yb_bar[i][k] = calculateMean(Yb, N[i]);
