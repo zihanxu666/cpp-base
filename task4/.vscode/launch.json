@@ -1,21 +1,33 @@
 {
-    // 使用 IntelliSense 了解相关属性。 
-    // 悬停以查看现有属性的描述。
-    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+
         {
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.out",
-            "args": [],
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
-            "MIMode": "lldb"
+            "MIMode": "lldb",
+            "preLaunchTask": "clang++"
+        },
+        {
+            "name": "(lldb) Launch_batch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "lldb",
+            "preLaunchTask": "clang++_batch"
         }
     ]
 }
