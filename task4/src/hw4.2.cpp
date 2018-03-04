@@ -2,8 +2,9 @@
 #include "../included/src/Eigen/Eigen"
 #include "../included/src/MVNormal.hpp"
 #include <fstream>
+#include "../included/src/hw4.2.hpp"
 
-Eigen::VectorXd getOmega(Eigen::MatrixXd mu, Eigen::MatrixXd Sigma)
+Eigen::VectorXd HW42::getOmega(Eigen::MatrixXd mu, Eigen::MatrixXd Sigma)
 {
     //omega estimation
 
@@ -17,14 +18,14 @@ Eigen::VectorXd getOmega(Eigen::MatrixXd mu, Eigen::MatrixXd Sigma)
     return omega;
 }
 
-double calculateVariance(Eigen::MatrixXd portfolioReturn, int n)
+double HW42::calculateVariance(Eigen::MatrixXd portfolioReturn, int n)
 {
     Eigen::MatrixXd oneVector(n, 1);
     oneVector.setOnes(n, 1);
 
     return ((portfolioReturn - portfolioReturn.mean() * oneVector.transpose()) * (portfolioReturn.transpose() - portfolioReturn.mean() * oneVector))(0) / n;
 }
-int main()
+int HW42::service()
 {
 
     //Problem 2

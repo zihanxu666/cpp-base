@@ -57,6 +57,7 @@
         "string_view": "cpp",
         "__string": "cpp",
         "ios": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "core": "cpp"
     }
 }
