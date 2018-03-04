@@ -7,14 +7,14 @@
 MVNormal::MVNormal(Eigen::VectorXd mu, Eigen::MatrixXd Sigma)
 : mu(mu), Sigma(Sigma)
 {
-    //check the mean matrix and the covariance matrix have matched sizes
+    //check if mu vector and sigma matrix have matched dimensions
     assert(mu.size() == Sigma.rows());
-    
+    //check if sigma matrix is a squared matrix
+    assert(Sigma.rows() == Sigma.cols());
+
     std::random_device rd;
     rng.seed(rd());  // set seed
     
-    //check Sigma matrix is a squared matrix
-    assert(Sigma.rows() == Sigma.cols());
     Eigen::LLT<Eigen::MatrixXd> decomp(Sigma);
     L = decomp.matrixL();
 };

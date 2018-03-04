@@ -11,10 +11,10 @@ Eigen::VectorXd HW42::getOmega(Eigen::MatrixXd mu, Eigen::MatrixXd Sigma)
     Eigen::MatrixXd oneVector(3, 1);
     oneVector.setOnes(3, 1);
     double lambda = 1.5;
-    double sigmaFactor = (oneVector.transpose() * Sigma.inverse() * oneVector)(0);
-    double muFactor = (oneVector.transpose() * Sigma.inverse() * mu)(0);
+    double a = (oneVector.transpose() * Sigma.inverse() * oneVector)(0);
+    double b = (oneVector.transpose() * Sigma.inverse() * mu)(0);
 
-    Eigen::VectorXd omega = (Sigma.inverse() * oneVector) / sigmaFactor + (sigmaFactor * Sigma.inverse() * mu - muFactor * Sigma.inverse() * oneVector) / (sigmaFactor * lambda);
+    Eigen::VectorXd omega = (Sigma.inverse() * oneVector) / a + (a * Sigma.inverse() * mu - b * Sigma.inverse() * oneVector) / (a * lambda);
     return omega;
 }
 
@@ -38,14 +38,14 @@ int HW42::service()
 
     MVNormal monthlyReturn(mu, Sigma);
 
-    Eigen::MatrixXd omega(3, 1);
-    omega.col(0) = getOmega(mu, Sigma); //true optimal weight
+    Eigen::MatrixXd omega(3, 1);//true optimal weight
+    omega.col(0) = getOmega(mu, Sigma); 
     //repeat 500 times
-    Eigen::MatrixXd omega500(3, 500); //
+    Eigen::MatrixXd omegaHat(3, 500); //
     Eigen::MatrixXd meanVariance(4, 500);
     for (int j = 0; j < 500; j++)
     {
-        //generate 60 random normally distributed returns
+        //generate 84 random normally distributed returns
         Eigen::MatrixXd Return(3, 84);
 
         for (int i = 0; i < 84; i++)
@@ -57,7 +57,7 @@ int HW42::service()
             Return.col(i) = monthlyReturn();
         }
 
-        Eigen::MatrixXd returnPast = Return.block(0, 0, 3, 60);
+        Eigen::MatrixXd returnPast = Return.block(0, 0, 3, 60);//60 monthly return
 
         //mu estimation
         Eigen::VectorXd mu_hat(3);
@@ -70,13 +70,13 @@ int HW42::service()
         Eigen::MatrixXd centered = returnPast.colwise() - returnPast.rowwise().mean();
         Sigma_hat = (centered * (centered.transpose())) / (double(returnPast.cols()) - 1);
         //part(a)
-        omega500.col(j) = getOmega(mu_hat, Sigma_hat);
+        omegaHat.col(j) = getOmega(mu_hat, Sigma_hat);
 
         //part(b)
-        Eigen::MatrixXd returnFuture = Return.block(0, 60, 3, 24);
+        Eigen::MatrixXd returnFuture = Return.block(0, 60, 3, 24);//24 monthly return
 
         Eigen::MatrixXd portfolioReturn(500, 24); //portfolio returns
-        portfolioReturn.row(j) = omega500.col(j).transpose() * returnFuture;
+        portfolioReturn.row(j) = omegaHat.col(j).transpose() * returnFuture;
 
         //sample mean and sample variance
         meanVariance(0, j) = portfolioReturn.row(j).mean();
@@ -92,7 +92,7 @@ int HW42::service()
     //output data
     std::ofstream myfile;
     myfile.open("output1.csv");
-    myfile << omega500;
+    myfile << omegaHat;
     myfile.close();
 
     //output data
