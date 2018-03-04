@@ -1,254 +1,182 @@
 // Main.cpp
 #define CATCH_CONFIG_RUNNER
-#include <iostream>
-// #include "included/src/gtest/gtest.h"
-
-// #include "included/src/gtest/gtest.h"
-// #include "test/Test1.1a.cpp"
-// #include "test/ConfigureTest.cpp"
-
-// #include "included/src/hw1.1b.h"
-// #include "included/src/Test3.hpp"
+#include <limits>
+#include <string>
+#include <cstdlib>
 
 #include "included/src/catch.hpp"
-#include "included/src/hw1.1a.h"
-#include "included/src/hw1.1b.h"
-#include "included/src/hw1.2a.h"
-#include "included/src/hw1.2b.h"
-#include "included/src/hw1.3a.h"
-#include "included/src/hw1.3b.h"
-#include "included/src/hw1.4.h"
-#include "included/src/hw1.5.h"
-using std::cout;
-// using ::testing::InitGoogleTest;
-TEST_CASE("HW1_TEST","[BASE]"){
-    
-    SECTION("HW1.1A"){
-        HW11a * obj1=new HW11a();
-        REQUIRE( obj1 !=NULL );
-        obj1->pattern(5);
-        
-    }
-    SECTION("HW1.1B"){
-        HW11b * obj2=new HW11b();
-        REQUIRE( obj2 !=NULL );
-        obj2->pattern(5,1);
-        
-    }
-}
-TEST_CASE("HW2_TEST","[BASE]"){
-    
-    SECTION("HW1.2A[normal]"){
-        HW12a * obj1=new HW12a();
-        REQUIRE( obj1 != NULL );
-        obj1->checkPalindrome("asdfdsa");
-        
-    }
-    SECTION("HW1.2A[error]"){
-        HW12a * obj1=new HW12a();
-        REQUIRE( obj1 != NULL );
-        obj1->checkPalindrome("asdf");
-        
-    }
-    
-    SECTION("HW1.2B[normal]"){
-        HW12b * obj2=new HW12b();
-        REQUIRE( obj2 != NULL );
-        std::string str="abc";
-        
-        obj2->reverse(str);
-        
-        REQUIRE(str == "cba");
-        
-    }
-    
-    SECTION("HW1.2B[error]"){
-        HW12b * obj2=new HW12b();
-        REQUIRE( obj2 != NULL );
-        std::string str="abc";
-        
-        obj2->reverse(str);
-        REQUIRE_FALSE(str=="abc");
-        
-    }
-}
+// #include "included/src/hw3.1.hpp"
+// #include "included/src/hw3.2.hpp"
+// #include "included/src/hw3.2c.hpp"
+// #include "included/src/generatorBuilder.hpp"
 
-TEST_CASE("HW3_TEST","[BASE]")
-{
-    SECTION("HW1.3A[normal]"){
-        HW13a * obj1=new HW13a();
-        REQUIRE( obj1 != NULL);
-        int result=obj1->binomialCoeff(3,2);
-        REQUIRE(result==3);
-        double * resultArray=obj1->binomial(1,0.3);
-        REQUIRE(resultArray!=NULL);
-    }
-    SECTION("HW1.3B[normal]"){
-        HW13b * obj2=new HW13b();
-        REQUIRE( obj2 != NULL);
-        int result=obj2->binomialCoeff(3,2);
-        REQUIRE(result==3);
-        
-    }
-}
-TEST_CASE("HW4_TEST","[BASE]")
-{
-    SECTION("HW1.4[normal]"){
-        HW14 * obj1=new HW14();
-        REQUIRE( obj1 != NULL);
-        
-        double result=obj1->f(1);
-        REQUIRE(result<0);
-    }
-}
-TEST_CASE("HW5_TEST","[BASE]")
-{
-    SECTION("HW1.5[normal]"){
-        HW15 * obj1=new HW15();
-        REQUIRE( obj1 != NULL);
-        SECTION("find date from String param"){
-            
-            int result=obj1->getParam("19-01-2018",0,2);
-            REQUIRE(result==19);
-            result=obj1->getParam("19-01-2018",3,2);
-            REQUIRE(result==1);
-            result=obj1->getParam("19-01-2018",6,4);
-            REQUIRE(result==2018);
-            
-            result=obj1->getParam("19-01-2018",0);
-            REQUIRE(result==19);
-            result=obj1->getParam("19-01-2018",3);
-            REQUIRE(result==1);
-            result=obj1->getParam("19-01-2018",6);
-            REQUIRE(result==20);
-            result=obj1->getParam("19-01-2018",8);
-            REQUIRE(result==18);
-            
-            int * resultArray=obj1->getAllParam("19-01-2018");
-            
-            REQUIRE(resultArray[0]==19);
-            REQUIRE(resultArray[1]==1);
-            REQUIRE(resultArray[2]==2018);
-        }
-        SECTION("check param"){
-            
-            int year=2016,month=2,day=29;
-            
-            int result=obj1->inputCheck(year,month,day);
-            REQUIRE(result==0);
-            
-            year=2015,month=2,day=28;
-            result=obj1->inputCheck(year,month,day);
-            REQUIRE(result==0);
-            
-            year=2015,month=4,day=30;
-            result=obj1->inputCheck(year,month,day);
-            REQUIRE(result==0);
-            
-            year=2015,month=5,day=31;
-            result=obj1->inputCheck(year,month,day);
-            REQUIRE(result==0);
-            
-        }
-    }
-    SECTION("HW1.5[error]"){
-        HW15 * obj1=new HW15();
-        REQUIRE( obj1 != NULL);
-        SECTION("check param"){
-            
-            int year=2016,month=2,day=30;
-            
-            int result=obj1->inputCheck(year,month,day);
-            REQUIRE(result==1);
-            
-            year=2015,month=2,day=29;
-            result=obj1->inputCheck(year,month,day);
-            REQUIRE(result==1);
-            
-            year=2015,month=4,day=31;
-            result=obj1->inputCheck(year,month,day);
-            REQUIRE(result==1);
-            
-            year=2015,month=5,day=37;
-            result=obj1->inputCheck(year,month,day);
-            REQUIRE(result==1);
-            
-        }
-    }
-}
+// TEST_CASE("HW3.1_TEST", "[BASE]")
+// {
 
-int main(int argc, char** argv) {
-    // testing::InitGoogleTest(&argc,argv);
-    // // //Runs all tests using Google Test.
-    // // Test3 t;
-    // // std::cout<<"111111111"<<t.add(1, 2)<<std::endl;
-    // return RUN_ALL_TESTS();
-    // hw11a::pattern(10,1);
-    int result = Catch::Session().run( argc, argv );
-    std::cout<<"enter number [1-8] to run , exit when enter number is [0]"<<std::endl;
-    std::cout<<"1: run 1.1a"<<std::endl;
-    std::cout<<"2: run 1.1b"<<std::endl;
-    std::cout<<"3: run 1.2a"<<std::endl;
-    std::cout<<"4: run 1.2b"<<std::endl;
-    std::cout<<"5: run 1.3a"<<std::endl;
-    std::cout<<"6: run 1.3b"<<std::endl;
-    std::cout<<"7: run 1.4"<<std::endl;
-    std::cout<<"8: run 1.5"<<std::endl;
-    
-    int command=-1;
-    std::cin>>command;
-    HW11a obj1;
-    HW11b obj2;
-    HW12a obj3;
-    HW12b obj4;
-    HW13a obj5;
-    HW13b obj6;
-    HW14 obj7;
-    HW15 obj8;
-    
-    while(command!=0)
-    {
-        switch (command)
-        {
-            case 1:
-                obj1.service();
-                break;
-            case 2:
-                obj2.service();
-                break;
-            case 3:
-                obj3.service();
-                break;
-            case 4:
-                obj4.service();
-                break;
-            case 5:
-                obj5.service();
-                break;
-            case 6:
-                obj6.service();
-                break;
-            case 7:
-                obj7.service();
-                break;
-            case 8:
-                obj8.service();
-                break;
-            default:
-                break;
-        }
-        command=-1;
-        std::cout<<"============================================"<<std::endl;
-        std::cout<<"enter number [1-8] to run , exit when enter number is [0]"<<std::endl;
-        std::cout<<"1: run 1.1a"<<std::endl;
-        std::cout<<"2: run 1.1b"<<std::endl;
-        std::cout<<"3: run 1.2a"<<std::endl;
-        std::cout<<"4: run 1.2b"<<std::endl;
-        std::cout<<"5: run 1.3a"<<std::endl;
-        std::cout<<"6: run 1.3b"<<std::endl;
-        std::cout<<"7: run 1.4"<<std::endl;
-        std::cout<<"8: run 1.5"<<std::endl;
-        std::cin>>command;
-    }
-    std::cout<<"bye..."<<std::endl;
+// 	SECTION("HW3.1[normal]")
+// 	{
+// 		HW31 *obj = new HW31();
+// 		REQUIRE(obj != NULL);
+// 	}
+// }
+
+// TEST_CASE("HW3.2_TEST", "[BASE]")
+// {
+
+// 	SECTION("HW3.2[normal]")
+// 	{
+
+// 		SECTION("HW3.2_expGenerator[normal]")
+// 		{
+
+// 			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::TEST_EXP_GENERATOR));
+// 			REQUIRE(obj != NULL);
+// 			auto tmp = obj->expGenerator(1);
+// 			char buffer[20];
+// 			gcvt(tmp, 6, buffer);
+// 			std::string result = buffer;
+// 			REQUIRE(result == "0.223144");
+// 		}
+
+// 		SECTION("HW3.2_expVariable[normal]")
+// 		{
+// 			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::TEST_EXP_VARABLE));
+// 			REQUIRE(obj != NULL);
+// 			auto tmp = obj->expVariable();
+// 			char buffer[20];
+// 			gcvt(tmp, 6, buffer);
+// 			std::string result = buffer;
+// 			REQUIRE(result == "0.693147");
+// 		}
+
+// 		SECTION("HW3.2_normalGenerator[normal]")
+// 		{
+// 			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::TEST_NORMAL));
+// 			REQUIRE(obj != NULL);
+// 			auto tmp = obj->normalGenerator();
+// 			char buffer[20];
+// 			gcvt(tmp, 6, buffer);
+// 			std::string result = buffer;
+// 			REQUIRE(result == "0.693147");
+// 		}
+
+// 		SECTION("HW3.2_calculateMean[normal]")
+// 		{
+// 			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::SIMPLE));
+// 			REQUIRE(obj != NULL);
+// 			double array[3] = {0.1, 0.1, 0.1};
+
+// 			auto tmp = obj->calculateMean(array, 3);
+// 			char buffer[20];
+// 			gcvt(tmp, 3, buffer);
+// 			std::string result = buffer;
+// 			REQUIRE(result == "0.1");
+// 		}
+
+// 		SECTION("HW3.2_calculateSD[normal]")
+// 		{
+// 			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::SIMPLE));
+// 			REQUIRE(obj != NULL);
+// 			double array[3] = {0.1, 0.1, 0.1};
+// 			auto tmp = obj->calculateSD(array, 0.1, 3);
+// 			REQUIRE(tmp == 0);
+// 		}
+// 		SECTION("HW3.2_confidenceInterval[normal]")
+// 		{
+// 			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::SIMPLE));
+// 			REQUIRE(obj != NULL);
+// 			auto *tmp = obj->confidenceInterval(0, 1);
+// 			char buffer1[20];
+// 			char buffer2[20];
+// 			gcvt(*tmp, 3, buffer1);
+// 			gcvt(*(tmp + 1), 3, buffer2);
+// 			std::string lower = buffer1;
+// 			std::string upper = buffer2;
+// 			REQUIRE(lower == "-1.96");
+// 			REQUIRE(upper == "1.96");
+// 		}
+// 	}
+// }
+
+// TEST_CASE("HW3.2c_TEST", "[BASE]")
+// {
+
+// 	SECTION("HW3.2c[normal]")
+// 	{
+// 		HW32c *obj = new HW32c();
+// 		REQUIRE(obj != NULL);
+
+// 		SECTION("HW2.3_calculateMean[normal]")
+// 		{
+// 			double array[3] = {0.1, 0.1, 0.1};
+
+// 			auto tmp = obj->calculateMean(array, 3);
+// 			char buffer[20];
+// 			gcvt(tmp, 3, buffer);
+// 			std::string result = buffer;
+// 			REQUIRE(result == "0.1");
+// 		}
+
+// 		SECTION("HW3.2c_calculateSD[normal]")
+// 		{
+// 			double array[3] = {0.1, 0.1, 0.1};
+// 			auto tmp = obj->calculateSD(array, 0.1, 3);
+// 			REQUIRE(tmp == 0);
+// 		}
+
+// 		SECTION("HW3.2c_confidenceInterval]")
+// 		{
+// 			auto *tmp = obj->confidenceInterval(0, 1);
+// 			char buffer1[20];
+// 			char buffer2[20];
+// 			gcvt(*tmp, 3, buffer1);
+// 			gcvt(*(tmp + 1), 3, buffer2);
+// 			std::string lower = buffer1;
+// 			std::string upper = buffer2;
+// 			REQUIRE(lower == "-1.96");
+// 			REQUIRE(upper == "1.96");
+// 		}
+// 	}
+// }
+
+int main(int argc, char **argv)
+{
+	int hw_length = 3;
+	std::string message = "enter number [1-";
+	message.append(std::to_string(hw_length)).append("] to run , exit when enter number is [0]\n").append("1: run 3.1").append("\n").append("2: run 3.2").append("\n").append("3: run 3.2c");
+
+	int result = Catch::Session().run(argc, argv);
+
+	std::cout << message << std::endl;
+
+	std::string str;
+
+	int command = -1;
+
+	std::cin >> command;
+	HW *objArray[hw_length];
+
+	objArray[0] = new HW31();
+	objArray[1] = new HW32(GeneratorBuilder::getGenerator(GeneratorType::UNI));
+	objArray[2] = new HW32c();
+
+	while (command != 0)
+	{
+
+		if (command <= hw_length)
+		{
+			objArray[command - 1]->service();
+		}
+		command = -1;
+		std::cout << "============================================" << std::endl;
+		std::cout << message << std::endl;
+		std::cin >> command;
+	}
+
+	for (auto p : objArray)
+	{
+		delete p;
+	}
+
+	std::cout << "bye..." << std::endl;
 }

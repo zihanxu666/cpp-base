@@ -121,21 +121,28 @@ int main()
     double Yb_bar[4][10000];
     int N[4] = {10, 100, 1000, 10000};
     
-    double b[4][10000];
+    
     for (int k = 0; k < 10000; k++)
     {
         for (int i = 0; i < 4; i++)
         { 
             double *S_T=getSpotPrice(N[i]);
             double *Y=getY(S_T,N[i]);
-            b[i][k] = getb(S_T, Y, N[i]);
             double *Yb = getYb(S_T, Y, N[i]);
             Y_bar[i][k] = calculateMean(Y, N[i]);
             Yb_bar[i][k] = calculateMean(Yb, N[i]);
+            delete S_T;
+            delete Y;
+            delete Yb;
+        }
+        if(k%1000==0)
+        {
+            std::cout<<k<<std::endl;   
         }
     }
     double variance[4][2];
     double rho[4];
+    std::cout<<"print result..."<<std::endl;
     for (int i=0;i<4;i++){
         variance[i][0]=calculateVariance(Y_bar[i],10000);
         variance[i][1]=calculateVariance(Yb_bar[i],10000);
