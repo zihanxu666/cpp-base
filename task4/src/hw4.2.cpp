@@ -7,22 +7,22 @@ Eigen::VectorXd getOmega(Eigen::MatrixXd mu, Eigen::MatrixXd Sigma)
 {
     //omega estimation
 
-    Eigen::MatrixXd oneVector(3,1);
-    oneVector.setOnes(3,1);
-    double lambda = 1.5;  
+    Eigen::MatrixXd oneVector(3, 1);
+    oneVector.setOnes(3, 1);
+    double lambda = 1.5;
     double sigmaFactor = (oneVector.transpose() * Sigma.inverse() * oneVector)(0);
     double muFactor = (oneVector.transpose() * Sigma.inverse() * mu)(0);
-    
+
     Eigen::VectorXd omega = (Sigma.inverse() * oneVector) / sigmaFactor + (sigmaFactor * Sigma.inverse() * mu - muFactor * Sigma.inverse() * oneVector) / (sigmaFactor * lambda);
     return omega;
 }
 
 double calculateVariance(Eigen::MatrixXd portfolioReturn, int n)
 {
-    Eigen::MatrixXd oneVector(n,1);
-    oneVector.setOnes(n,1);
+    Eigen::MatrixXd oneVector(n, 1);
+    oneVector.setOnes(n, 1);
 
-    return ((portfolioReturn - portfolioReturn.mean() * oneVector.transpose()) * (portfolioReturn.transpose() - portfolioReturn.mean() * oneVector))(0)/n;
+    return ((portfolioReturn - portfolioReturn.mean() * oneVector.transpose()) * (portfolioReturn.transpose() - portfolioReturn.mean() * oneVector))(0) / n;
 }
 int main()
 {
@@ -37,7 +37,7 @@ int main()
 
     MVNormal monthlyReturn(mu, Sigma);
 
-    Eigen::MatrixXd omega(3,1);
+    Eigen::MatrixXd omega(3, 1);
     omega.col(0) = getOmega(mu, Sigma); //true optimal weight
     //repeat 500 times
     Eigen::MatrixXd omega500(3, 500); //
@@ -76,33 +76,28 @@ int main()
 
         Eigen::MatrixXd portfolioReturn(500, 24); //portfolio returns
         portfolioReturn.row(j) = omega500.col(j).transpose() * returnFuture;
-        
+
         //sample mean and sample variance
-        meanVariance(0,j)=portfolioReturn.row(j).mean();
-        meanVariance(1,j)= calculateVariance(portfolioReturn.row(j), 24);
-        
+        meanVariance(0, j) = portfolioReturn.row(j).mean();
+        meanVariance(1, j) = calculateVariance(portfolioReturn.row(j), 24);
 
         Eigen::MatrixXd portfolioTheoretical(500, 24);
         portfolioTheoretical.row(j) = omega.transpose() * returnFuture; //returns of the theoretical optimal portfolio
-        
-        meanVariance(2,j)= portfolioTheoretical.row(j).mean();
-        meanVariance(3,j) = calculateVariance(portfolioTheoretical.row(j), 24);
+
+        meanVariance(2, j) = portfolioTheoretical.row(j).mean();
+        meanVariance(3, j) = calculateVariance(portfolioTheoretical.row(j), 24);
     }
-    std::cout<<omega;
+    std::cout << omega;
     //output data
     std::ofstream myfile;
     myfile.open("output1.csv");
-
-        myfile << omega500;
-
+    myfile << omega500;
     myfile.close();
 
     //output data
     std::ofstream output;
     output.open("output2.csv");
-
-    output<<meanVariance;
-
+    output << meanVariance;
     output.close();
 
     return 0;
