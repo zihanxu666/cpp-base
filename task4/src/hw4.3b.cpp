@@ -126,8 +126,13 @@ int HW43b::service()
     int n = 5;
     double Y_bar[n][m];
     double Yb_bar[n][m];
-    int N[] = {10, 100, 1000, 10000, 100000};
-    int count[] = {0, 0, 0, 0, 0};
+    int N[n];
+    int count[n];
+    for(int i=0;i<n;i++){
+        N[i]=pow(10,i);
+        count[i]=0;
+    }
+
     double sb = 0;
 
     for (int k = 0; k < m; k++)

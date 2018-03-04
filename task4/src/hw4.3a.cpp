@@ -90,15 +90,18 @@ int HW43a::service()
 {
     double r = 0.05, T = 0.25, strike = 55.0;
     int m=10000;//sample size
-    double Y_bar[4][m];
-    double Yb_bar[4][m];
-    int N[4] = {10, 100, 1000, 10000};
-    
+    int n=4;
+    double Y_bar[n][m];
+    double Yb_bar[n][m];
+    int N[n];
+    for(int i=0;i<n;i++){
+        N[i]=pow(10,i);
+    }
     
     
     for (int k = 0; k < m; k++)
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < n; i++)
         {
             double *S_T = new double[N[i]];
             double *Y = new double[N[i]];
@@ -122,10 +125,10 @@ int HW43a::service()
             std::cout << k << std::endl;
         }
     }
-    double variance[4][2];
-    double rho[4];
+    double variance[n][2];
+    double rho[n];
     std::cout << "print result..." << std::endl;
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < n; i++)
     {
         variance[i][0] = calculateVariance(Y_bar[i], m);
         variance[i][1] = calculateVariance(Yb_bar[i], m);
