@@ -95,7 +95,7 @@ int HW43a::service()
     double Yb_bar[n][m];
     int N[n];
     for(int i=0;i<n;i++){
-        N[i]=pow(10,i);
+        N[i]=pow(10,i+1);
     }
     
     

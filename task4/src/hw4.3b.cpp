@@ -82,7 +82,7 @@ double *HW43b::confidenceInterval(double mean, double SD, int n)
         result[1] = mean + 1.984 * SD;
     }
     else
-    {
+    { //z=1.96
         result[0] = mean - 1.96 * SD;
         result[1] = mean + 1.96 * SD;
     }
@@ -129,7 +129,7 @@ int HW43b::service()
     int N[n];
     int count[n];
     for(int i=0;i<n;i++){
-        N[i]=pow(10,i);
+        N[i]=pow(10,i+1);
         count[i]=0;
     }
 
