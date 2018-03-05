@@ -11,13 +11,13 @@ MVNormal::MVNormal(Eigen::VectorXd mu, Eigen::MatrixXd Sigma)
     assert(mu.size() == Sigma.rows());
     //check if sigma matrix is a squared matrix
     assert(Sigma.rows() == Sigma.cols());
-    //check if the sigma matrix is positive definite
-    assert(decomp.info()!=Eigen::NumericalIssue);
-
+    
     std::random_device rd;
     rng.seed(rd());  // set seed
     
     Eigen::LLT<Eigen::MatrixXd> decomp(Sigma);
+    //check if the sigma matrix is positive definite
+    assert(decomp.info()!= Eigen::NumericalIssue);
     L = decomp.matrixL();
 };
 

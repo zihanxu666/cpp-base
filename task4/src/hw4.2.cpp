@@ -40,6 +40,8 @@ int HW42::service()
 
     Eigen::MatrixXd omega(3, 1);//true optimal weight
     omega.col(0) = getOmega(mu, Sigma); 
+    double trueMean=(omega.transpose()*mu)(0);
+    double trueVariance=(omega.transpose()*Sigma*omega)(0);
     //repeat 500 times
     Eigen::MatrixXd omegaHat(3, 500); //
     Eigen::MatrixXd meanVariance(4, 500);
@@ -88,18 +90,27 @@ int HW42::service()
         meanVariance(2, j) = portfolioTheoretical.row(j).mean();
         meanVariance(3, j) = calculateVariance(portfolioTheoretical.row(j), 24);
     }
-    std::cout << omega;
+    
+    std::cout <<"Theoretical optimal portfolio is:"<<std::endl;
+    std::cout << omega<<std::endl;
+    std::cout << "True mean: "<<trueMean<<", true variance: "<<trueVariance<<std::endl;
     //output data
     std::ofstream myfile;
     myfile.open("output1.csv");
-    myfile << omegaHat;
+    myfile << omegaHat.transpose();
     myfile.close();
 
     //output data
     std::ofstream output;
     output.open("output2.csv");
-    output << meanVariance;
+    output << meanVariance.transpose();
     output.close();
 
     return 0;
+}
+
+int main()
+{
+    HW42 obj;
+    obj.service();
 }

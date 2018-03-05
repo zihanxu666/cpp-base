@@ -6,7 +6,7 @@ class HW43a : public HW
   private:
   public:
     double payoff(double spot, double strike);
-    double spotPrice(double maturity);
+    double spotPrice();
     double calculateMean(double *data, int n);
     double calculateVariance(double *data, int n);
     double calculateCovariance(double *data1, double *data2, int n);

@@ -8,20 +8,18 @@ double HW43a::payoff(double spot, double strike)
     return spot > strike ? (spot - strike) : 0;
 }
 //simulate spot price using classical BS model
-double HW43a::spotPrice(double maturity)
+double HW43a::spotPrice()
 {
-    double s_0 = std::log(50.0), r = 0.05, sigma = 0.3;
-
     std::random_device rd;
     std::mt19937 rng(rd());
     std::normal_distribution<double> norm(0.0, 1.0);
+  //  s_0 = 50.0, r = 0.05, sigma = 0.3;
+  //  drift_log = r - 0.5 * sigma * sigma
+  //  dt = 0.25
+  //  dW = sqrt(dt) * norm(rng)
+  //  log_price = log(s_0) + drift_log * dt + sigma * dW
 
-    double drift_log = r - 0.5 * sigma * sigma;
-    double dt = maturity, sqrt_dt = std::sqrt(dt);
-    double dW = sqrt_dt * norm(rng);
-    double log_price = s_0 + drift_log * dt + sigma * dW;
-
-    return std::exp(log_price);
+    return 50.0*std::exp((0.05 - 0.5 * pow(0.3,2))*0.25 + 0.3*std::sqrt(0.25) * norm(rng));
 }
 
 double HW43a::calculateMean(double *data, int n)
@@ -43,7 +41,7 @@ double HW43a::calculateVariance(double *data, int n)
     for (int i = 0; i < n; i++)
         variance += pow(data[i] - mean, 2);
 
-    return variance / n;
+    return variance / (n-1);
 }
 double HW43a::calculateCovariance(double *data1, double *data2, int n)
 {
@@ -63,7 +61,7 @@ double HW43a::calculateCovariance(double *data1, double *data2, int n)
     for (int i = 0; i < n; i++)
         covariance += (data1[i] - mean1) * (data2[i] - mean2);
 
-    return covariance / n;
+    return covariance / (n-1);
 }
 
 
@@ -88,7 +86,7 @@ double *HW43a::getYb(double *spotPrice, double *Y, int n)
 
 int HW43a::service()
 {
-    double T = 0.25, strike = 55.0;
+    double strike = 55.0;
     int m=10000;//sample size
     int n=4;
     double Y_bar[n][m];
@@ -107,7 +105,7 @@ int HW43a::service()
             double *Y = new double[N[i]];
             for (int j = 0; j < N[i]; j++)
             {
-                S_T[j] = spotPrice(T);
+                S_T[j] = spotPrice();
                 Y[j] = payoff(S_T[j], strike);
             }
 
