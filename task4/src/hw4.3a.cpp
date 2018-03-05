@@ -88,7 +88,7 @@ double *HW43a::getYb(double *spotPrice, double *Y, int n)
 
 int HW43a::service()
 {
-    double r = 0.05, T = 0.25, strike = 55.0;
+    double T = 0.25, strike = 55.0;
     int m=10000;//sample size
     int n=4;
     double Y_bar[n][m];
