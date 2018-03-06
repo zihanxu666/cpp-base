@@ -13,41 +13,36 @@
 TEST_CASE("HW4.2_TEST", "[BASE]")
 {
 
-	SECTION("HW4.2[normal]")
-	{  HW42 *obj = new HW42();
-		REQUIRE(obj != NULL);
+    SECTION("HW4.2[normal]")
+    {
+        HW42 *obj = new HW42();
+        REQUIRE(obj != NULL);
 
-		SECTION("HW4.2_getOmega[normal]")
-		{
-			Eigen::VectorXd mu(3);
-			Eigen::MatrixXd Sigma(3, 3);
-			mu << 0.04, 0.025, 0.06;
-			Sigma << 0.00640000, 0.00368695, 0.00360000, 0.00368695, 0.00590000, 0.00311086, 0.00360000, 0.00311086, 0.00810000;
-			Eigen::VectorXd result = obj->getOmega(mu, Sigma);
-			double tmp1 = result(0);
-			double tmp2 = result(1);
-			double tmp3 = result(2);
-			char buffer1[20],buffer2[20],buffer3[20];
-			gcvt(tmp1, 6, buffer1);
-			gcvt(tmp2, 6, buffer2);
-			gcvt(tmp3, 6, buffer3);
+        SECTION("HW4.2_getOmega[normal]")
+        {
+            Eigen::VectorXd mu(3);
+            Eigen::MatrixXd Sigma(3, 3);
+            mu << 0.04, 0.025, 0.06;
+            Sigma << 0.00640000, 0.00368695, 0.00360000, 0.00368695, 0.00590000, 0.00311086, 0.00360000, 0.00311086, 0.00810000;
+            Eigen::VectorXd result = obj->getOmega(mu, Sigma);
+            double tmp1 = result(0);
+            double tmp2 = result(1);
+            double tmp3 = result(2);
+            char buffer1[20], buffer2[20], buffer3[20];
+            gcvt(tmp1, 6, buffer1);
+            gcvt(tmp2, 6, buffer2);
+            gcvt(tmp3, 6, buffer3);
 
-			std::string w1 = buffer1;
-			std::string w2 = buffer2;
-			std::string w3 = buffer3;
+            std::string w1 = buffer1;
+            std::string w2 = buffer2;
+            std::string w3 = buffer3;
 
-			REQUIRE(w1 == "0.787001");
-			REQUIRE(w2 == "-2.87198");
-			REQUIRE(w3 == "3.08498");
-		}
+            REQUIRE(w1 == "0.787001");
+            REQUIRE(w2 == "-2.87198");
+            REQUIRE(w3 == "3.08498");
+        }
 
-		SECTION("HW4.2_calculateVariance[normal]")
-		{   Eigen::MatrixXd Return(3, 1);
-		Return.setOnes(3, 1);
-			double result = obj->calculateVariance(Return, 3);
-			REQUIRE(obj == 0);			
-		}
-	}
+    }
 }
 
 // TEST_CASE("HW3.2c_TEST", "[BASE]")
@@ -93,42 +88,42 @@ TEST_CASE("HW4.2_TEST", "[BASE]")
 
 int main(int argc, char **argv)
 {
-	int hw_length = 3;
-	std::string message = "enter number [1-";
-	message.append(std::to_string(hw_length)).append("] to run , exit when enter number is [0]\n").append("1: run 4.2").append("\n").append("2: run 4.3a").append("\n").append("3: run 4.3b");
+    int hw_length = 3;
+    std::string message = "enter number [1-";
+    message.append(std::to_string(hw_length)).append("] to run , exit when enter number is [0]\n").append("1: run 4.2").append("\n").append("2: run 4.3a").append("\n").append("3: run 4.3b");
 
-	int result = Catch::Session().run(argc, argv);
+    int result = Catch::Session().run(argc, argv);
 
-	std::cout << message << std::endl;
+    std::cout << message << std::endl;
 
-	std::string str;
+    std::string str;
 
-	int command = -1;
+    int command = -1;
 
-	std::cin >> command;
-	HW *objArray[hw_length];
+    std::cin >> command;
+    HW *objArray[hw_length];
 
-	objArray[0] = new HW42();
-	objArray[1] = new HW43a();
-	objArray[2] = new HW43b();
+    objArray[0] = new HW42();
+    objArray[1] = new HW43a();
+    objArray[2] = new HW43b();
 
-	while (command != 0)
-	{
+    while (command != 0)
+    {
 
-		if (command <= hw_length)
-		{
-			objArray[command - 1]->service();
-		}
-		command = -1;
-		std::cout << "============================================" << std::endl;
-		std::cout << message << std::endl;
-		std::cin >> command;
-	}
+        if (command <= hw_length)
+        {
+            objArray[command - 1]->service();
+        }
+        command = -1;
+        std::cout << "============================================" << std::endl;
+        std::cout << message << std::endl;
+        std::cin >> command;
+    }
 
-	for (auto p : objArray)
-	{
-		delete p;
-	}
+    for (auto p : objArray)
+    {
+        delete p;
+    }
 
-	std::cout << "bye..." << std::endl;
+    std::cout << "bye..." << std::endl;
 }
