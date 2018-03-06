@@ -29,7 +29,6 @@ int HW42::service()
 {
 
     //Problem 2
-
     //part(a)
     Eigen::VectorXd mu(3);
     Eigen::MatrixXd Sigma(3, 3);
@@ -43,7 +42,7 @@ int HW42::service()
     double trueMean=(omega.transpose()*mu)(0);
     double trueVariance=(omega.transpose()*Sigma*omega)(0);
     //repeat 500 times
-    Eigen::MatrixXd omegaHat(3, 500); //
+    Eigen::MatrixXd omegaHat(3, 500); 
     Eigen::MatrixXd meanVariance(4, 500);
     for (int j = 0; j < 500; j++)
     {
