@@ -14,7 +14,8 @@ TEST_CASE("HW4.2_TEST", "[BASE]")
 {
 
 	SECTION("HW4.2[normal]")
-	{
+	{  HW42 *obj = new HW42();
+		REQUIRE(obj != NULL);
 
 		SECTION("HW4.2_getOmega[normal]")
 		{
