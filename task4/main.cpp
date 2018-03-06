@@ -5,6 +5,7 @@
 #include <cstdlib>
 
 #include "included/src/catch.hpp"
+#include "included/src/hw.hpp"
 #include "included/src/hw4.2.hpp"
 #include "included/src/hw4.3a.hpp"
 #include "included/src/hw4.3b.hpp"
@@ -22,23 +23,28 @@ TEST_CASE("HW4.2_TEST", "[BASE]")
 			mu << 0.04, 0.025, 0.06;
 			Sigma << 0.00640000, 0.00368695, 0.00360000, 0.00368695, 0.00590000, 0.00311086, 0.00360000, 0.00311086, 0.00810000;
 			Eigen::VectorXd result = obj->getOmega(mu, Sigma);
-			double tmp1=result[0];
-			tmp
-			char buffer[20];
-			gcvt(tmp, 6, buffer);
-			std::string result = buffer;
-			REQUIRE(result == "0.223144");
+			double tmp1 = result(0);
+			double tmp2 = result(1);
+			double tmp3 = result(2);
+			char buffer1[20],buffer2[20],buffer3[20];
+			gcvt(tmp1, 6, buffer1);
+			gcvt(tmp2, 6, buffer2);
+			gcvt(tmp3, 6, buffer3);
+
+			std::string w1 = buffer1;
+			std::string w2 = buffer2;
+			std::string w3 = buffer3;
+
+			REQUIRE(w1 == "0.787001");
+			REQUIRE(w2 == "-2.87198");
+			REQUIRE(w3 == "3.08498");
 		}
 
-		SECTION("HW3.2_expVariable[normal]")
-		{
-			HW32 *obj = new HW32(GeneratorBuilder::getGenerator(GeneratorType::TEST_EXP_VARABLE));
-			REQUIRE(obj != NULL);
-			auto tmp = obj->expVariable();
-			char buffer[20];
-			gcvt(tmp, 6, buffer);
-			std::string result = buffer;
-			REQUIRE(result == "0.693147");
+		SECTION("HW4.2_calculateVariance[normal]")
+		{   Eigen::MatrixXd Return(3, 1);
+		Return.setOnes(3, 1);
+			double result = obj->calculateVariance(Return, 3);
+			REQUIRE(obj == 0);			
 		}
 	}
 }
