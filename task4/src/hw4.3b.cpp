@@ -1,6 +1,3 @@
-#include <iostream>
-#include <random>
-#include <cmath>
 #include "../included/src/hw4.3b.hpp"
 //call option payoff
 double HW43b::payoff(double spot, double strike)
@@ -138,8 +135,8 @@ int HW43b::service()
     {
         for (int i = 0; i < n; i++)
         {
-            double *S_T = new double[N[i]];
-            double *Y = new double[N[i]];
+            double * S_T = new double[N[i]];
+            double * Y = new double[N[i]];
             for (int j = 0; j < N[i]; j++)
             {
                 S_T[j] = spotPrice();

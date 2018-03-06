@@ -1,5 +1,6 @@
 #include "hw.hpp"
 #include "MVNormal.hpp"
+#include "Eigen/Eigen"
 
 class HW42:public HW
 {   

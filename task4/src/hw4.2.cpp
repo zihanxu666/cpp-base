@@ -1,7 +1,3 @@
-#include <iostream>
-#include "../included/src/Eigen/Eigen"
-#include "../included/src/MVNormal.hpp"
-#include <fstream>
 #include "../included/src/hw4.2.hpp"
 
 Eigen::VectorXd HW42::getOmega(Eigen::MatrixXd mu, Eigen::MatrixXd Sigma)
@@ -108,8 +104,3 @@ int HW42::service()
     return 0;
 }
 
-int main()
-{
-    HW42 obj;
-    obj.service();
-}
