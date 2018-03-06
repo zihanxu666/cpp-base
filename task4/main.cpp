@@ -5,6 +5,7 @@
 #include <cstdlib>
 
 #include "included/src/catch.hpp"
+#include "included/src/hw.hpp"
 #include "included/src/hw4.2.hpp"
 #include "included/src/hw4.3a.hpp"
 #include "included/src/hw4.3b.hpp"
